@@ -1,0 +1,99 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #E9E9E9;
+}
+.lableDiv{
+  overflow: hidden;
+  background-color: #B8B8BA;
+  padding: 10px;
+  position: relative;
+}
+.textDiv{
+  overflow: hidden;
+  padding: 10px;
+  background-color: white;
+  margin-bottom: 50px;
+}
+.addNews{
+  position: fixed;
+  display: none;
+  width: 900px;
+  height: 500px;
+  border: 2px solid black;
+  margin-left: calc(50% - 450px);
+  margin-top: 100px;
+  background-color: #E9E9E9;
+  padding: 30px 20px 30px 20px;
+  z-index: 1;
+}
+.inputNews{
+  width: 900px;
+  height: 30px;
+  margin-bottom: 10px;
+  padding: 5px 15px 5px 15px;
+  resize: none;
+}
+textarea.inputNews{
+  height: 430px;
+}
+.close{
+  float: right;
+}
+.headAddNews{
+  width: 100%;
+  height: 50px;
+}
+.lableNews{
+  font-size: 24px;
+  font-family: 'PT Sans', sans-serif;
+  margin: 3px;
+}
+.deleteNews{
+  width: 120px;
+  height: 40px;
+  background-color: rgba(218, 218, 218);
+  font-size: 24px;
+  text-align: center;
+  display: none;
+  float: right;
+  position: absolute;
+  margin-top: -20px;
+  margin-left: calc(100% - 140px);
+  cursor: pointer;
+  top: 50%;
+}
+.deleteNews > p {
+  margin-top: 6px;
+}
+.eachNews{
+  white-space: pre-wrap;
+}
+#add{
+  float: right;
+  display: none;
+  height: 30px;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+#checkPassInput{
+  float: right;
+  height: 30px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 10px;
+  width: 100px;
+}
+#checkPass{
+  float: right;
+  height: 30px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+#newsResult{
+
+}

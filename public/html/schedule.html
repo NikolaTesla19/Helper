@@ -1,0 +1,22 @@
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/schedule.css" >
+    <script src="../jquery.js"></script>
+    <script src="../js/schedule.js"></script>
+  </head>
+  <body>
+    <div>
+      <p>Количество работников</p>
+      <input id="scheduleValue" type="number" onkeyup = 'this.value=parseInt(this.value) | 0' name="" value="0"></input>
+      <input type="button" onclick="updateWorkersNum()" value="Обновить"></input>
+    </div>
+    <div>
+      <table id="schedule">
+
+      </table>
+    </div>
+  </body>
+
+  </html>

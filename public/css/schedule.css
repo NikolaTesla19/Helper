@@ -1,0 +1,48 @@
+tr{
+  height: 20px;
+}
+td{
+  border-collapse: collapse;
+  border: 2px solid black;
+}
+
+.workerName{
+  width: 200px;
+}
+.workerNameInput{
+  border: none;
+  width: 200px;
+}
+.workerNameInput:focus{
+  outline: none;
+  border: none;
+}
+#schedule{
+  border-collapse: collapse;
+  border: 2px solid black;
+  font-size: 20px;
+}
+.workTimeFromText{
+  width: 100px;
+}
+.workTimeFromNumber{
+  width: 20px;
+}
+.workTimeFromH, .workTimeFromMin{
+  width: 20px;
+  float: left;
+  outline: none;
+  border: none
+}
+.workTimeToText{
+  width: 20px;
+}
+.workTimeToNumber{
+  width: 20px;
+}
+.workTimeToH, .workTimeToMin{
+  width: 20px;
+  float: left;
+  outline: none;
+  border: none
+}

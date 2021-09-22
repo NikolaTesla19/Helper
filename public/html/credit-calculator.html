@@ -1,0 +1,1695 @@
+<html>
+
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <link rel="stylesheet" type="text/css" href="../yslpotreb.css" >
+   <link rel="stylesheet" type="text/css" href="../yslrefinansirovanie.css" >
+   <link rel="stylesheet" type="text/css" href="../yslkreditki.css" >
+   <link rel="stylesheet" type="text/css" href="../css/credit.css" >
+   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto:wght@500&family=Rufina&display=swap" rel="stylesheet">
+   <script src="../jquery.js"></script>
+   <script src="../js/credit.js"></script>
+   <script src="../js/blinger-text.js"></script>
+   <script src="../post.js"></script>
+   <script src="../log.js"></script>
+   <script src="../kalk.js"></script>
+  </head>
+
+<body>
+
+  <div id="credit-calc-input">
+    <form>
+
+      <div class="credit-calc-input-conteiner">
+        <div class="credit-calc-input-text">
+          <p> Доход кредитополучателя </p>
+        </div>
+        <div class="credit-calc-input">
+          <br/>
+          <input id="dohod-kreditopolychatelya" onkeyup = 'this.value=parseInt(this.value) | 0' type="text" size="15" value="0">
+        </div>
+      </div>
+
+      <div class="credit-calc-input-conteiner">
+        <div class="credit-calc-input-text">
+          <p> Общий лимит по кредитным картам </p>
+        </div>
+        <div class="credit-calc-input">
+          <br/>
+          <input id="limit-po-kreditnim-kartam" onkeyup = 'this.value=parseInt(this.value) | 0' type="text" size="15" value="0">
+        </div>
+      </div>
+
+      <div class="credit-calc-input-conteiner">
+        <div class="credit-calc-input-text">
+          <p> Общий лимит по карте "Халва"</p>
+        </div>
+        <div class="credit-calc-input">
+          <br/>
+          <input id="limit-po-halve" onkeyup = 'this.value=parseInt(this.value) | 0' type="text" size="15" value="0">
+        </div>
+      </div>
+
+      <div class="credit-calc-input-conteiner">
+        <div class="credit-calc-input-text">
+          <p> Платежи по кредитам </p>
+        </div>
+        <div class="credit-calc-input">
+          <br/>
+          <input id="platezi-po-kreditam" onkeyup = 'this.value=parseInt(this.value) | 0' type="text" size="15" value="0">
+        </div>
+      </div>
+
+      <div class="credit-calc-input-conteiner">
+        <div class="credit-calc-input-text">
+          <p> Количество иждивенцев </p>
+        </div>
+        <div class="credit-calc-input">
+          <br/>
+          <input id="kolichestvo-izdivencev" onkeyup = 'this.value=parseInt(this.value) | 0' type="text" size="15" value="0">
+        </div>
+      </div>
+
+      <div class="credit-calc-input-conteiner">
+        <div class="credit-calc-input-text">
+          <p> Необходимая сумма клиенту</p>
+          <img class="help-icon pointer" id="help-neobhodimaya-summa" src="../img/help-icon.png">
+          <div class="help-info" id="info-neobhodimaya-summa">
+            <p>Если необходимо рассчитать максимальную сумму, то необходимо проставить 0<br><br> Платёж и график платежей рассчитывается исходя из проставленной суммы</p>
+          </div>
+        </div>
+        <div class="credit-calc-input">
+          <br/>
+          <input id="neobhodimaya-summa" onkeyup = 'this.value=parseInt(this.value) | 0' type="text" size="15" value="0">
+        </div>
+      </div>
+
+      <div class="credit-calc-input-conteiner">
+        <div class="credit-calc-input-text">
+          <p> Срок кредитования </p>
+          <img class="help-icon pointer" id="help-srock-creditovaniya" src="../img/help-icon.png">
+          <div class="help-info" id="info-srock-creditovaniya">
+            <p>Если срок кредитования выставлен больше, чем максимально допустимый, то кредит будет рассчитан на максимальный возможный срок по этому кредиту. Анологично с минимальным порогом</p>
+          </div>
+
+        </div>
+        <div class="credit-calc-input">
+          <br/>
+          <input id="srok-kreditovaniya" onkeyup = 'this.value=parseInt(this.value) | 0' type="text" size="15" value="36">
+        </div>
+      </div>
+
+      <div class="credit-calc-input-conteiner">
+        <div class="credit-calc-input-text">
+          <p> Процентная ставка </p>
+      </div>
+        <div class="credit-calc-input">
+          <br/>
+          <input id="procentnaya-stavka" onkeyup="this.value=this.value.replace(/[^0-9\.]/g, '');"  type="text" size="15" value="13.33">
+        </div>
+      </div>
+
+      <div class="credit-calc-input-conteiner" id="credit-calc-input-conteiner-radio">
+        <div class="credit-calc-input-text" id="credit-calc-input-text-radio">
+          <p> Категория клиента </p>
+        </div>
+        <div class="credit-calc-input" id="credit-calc-input-radio">
+           <input class="pointer" id="id_klassik" type="radio" name="kat" value="1" checked><label class="pointer" for="id_klassik"> Классик </label><Br>
+           <input class="pointer" id="id_prestiz" type="radio" name="kat" value="2"><label class="pointer" for="id_prestiz"> Престиж </label><Br>
+           <input class="pointer" id="id_premium" type="radio" name="kat" value="3"><label class="pointer" for="id_premium"> Премиум </label><Br>
+           <input class="pointer" id="id_vip" type="radio" name="kat" value="4"><label class="pointer" for="id_vip"> VIP </label><Br>
+        </div>
+      </div>
+
+      <div class="credit-calc-input-conteiner">
+        <div class="credit-calc-input-text">
+          <p style="margin-right: 80px;"> Количество лиц в совокупном доходе </p>
+          <img class="help-icon pointer" id="help-izdevenci" src="../img/help-icon.png">
+          <div class="help-info" id="info-izdevenci">
+            <p>Учитывается только для кредитов на недвижимимость</p>
+          </div>
+        </div>
+        <div class="credit-calc-input">
+          <br/>
+          <input id="sovokypniy-dohod-kolichestvo" onkeyup = 'this.value=parseInt(this.value) | 0' type="text" size="15" value="1">
+        </div>
+      </div>
+
+      <div class="credit-calc-input-conteiner">
+        <div class="credit-calc-input-text">
+           <p> Чистый доход кредитополучателя </p>
+        </div>
+        <div id="chistiy-dohod" class="credit-calc-input">
+        </div>
+      </div>
+
+      <div class="credit-calc-input-conteiner" id="resul-div">
+        <p align="right">
+          <input class="button-result" id="result" type="button" onclick="resul()" value="Рассчитать">
+        </p>
+      </div>
+
+    </form>
+
+    <div id="question-blinger-calc">
+      <p>Вы обслуживаетесь в Банке по зарплатному проекту?</p><br>
+      <p>Уточните, пожалуйста, уровень Вашего среднемесячного дохода за последние 3 месяца.</p><br>
+      <p>Имеются ли другие кредиты, рассрочки, кредитные карты, карты рассрочки, овердрафты?</p><br>
+      <p>Сколько оплачиваете в месяц по кредитам, на какую общую сумму оформлены кредитные карты, карты рассрочек?</p><br>
+      <p>Имеются ли у Вас иждивенцы(несовершеннолетние дети или супруга в декретном отпуске)?</p><br>
+      <p>Бланк справки о доходах Вы можете скачать перейдя по ссылке:<br>http://www.belveb.by/upload/credits/Справка.doc</p>
+    </div>
+  </div>
+
+
+
+  <div id="credit-calc-outnput">
+
+    <div class="credit-calc-output-conteiner" id="id_parada1">
+        <div class="credit-calc-output-name" id="id_paradadiv">
+          <p align="center">Партнёрская парада</p>
+        </div>
+      <div class="credit-calc-output-calculation" id="id_parada">
+        <br>
+      </div>
+    </div>
+
+    <div class="credit-calc-output-conteiner" id="id_drysh1">
+        <div class="credit-calc-output-name" id="id_dryshdiv">
+          <p align="center">Дружная будоуля</p>
+        </div>
+      <div class="credit-calc-output-calculation" id="id_drysh">
+        <br>
+      </div>
+    </div>
+
+    <div class="credit-calc-output-conteiner" id="id_ykas1">
+      <div class="credit-calc-output-name" id="id_ykasdiv">
+          <p align="center">240 Указ</p>
+      </div>
+      <div class="credit-calc-output-calculation" id="id_ykas">
+      </div>
+    </div>
+
+    <div class="credit-calc-output-conteiner" id="id_hutki1">
+        <div class="credit-calc-output-name" id="id_hutkidiv">
+          <p align="center">Хутки анлайн</p>
+          <div class="online-icon-div">
+            <img src="../img/online-icon.png">
+            <p>ONLINE</p>
+          </div>
+        </div>
+      <div class="credit-calc-output-calculation" id="id_hutki">
+        <br><p align="center" style="color: red; font-size: 20px;">Временно приостановлен</p>
+      </div>
+    </div>
+
+    <div class="credit-calc-output-conteiner" id="id_klikni5">
+        <div class="credit-calc-output-name" id="id_kliknidiv">
+          <p align="center">Кликни грошы</p>
+          <div class="online-icon-div">
+            <img src="../img/online-icon.png">
+            <p>ONLINE</p>
+          </div>
+        </div>
+      <div class="credit-calc-output-calculation" id="id_klikni">
+      </div>
+    </div>
+
+    <div class="credit-calc-output-conteiner" id="id_svoechas1">
+        <div class="credit-calc-output-name"  id="id_svoechasdiv">
+          <p align="center">Своечасовая</p>
+          <div class="online-icon-div">
+            <img src="../img/online-icon.png">
+            <p>ONLINE</p>
+          </div>
+        </div>
+      <div class="credit-calc-output-calculation" id="id_svoechas">
+        <br><p align="center" style="color: red; font-size: 20px;">Временно приостановлен</p>
+      </div>
+    </div>
+
+    <div class="credit-calc-output-conteiner" id="id_overdron1">
+      <div class="credit-calc-output-name" id="id_overdrondiv">
+          <p align="center">Овердрафт</p>
+          <div class="online-icon-div">
+            <img src="../img/online-icon.png">
+            <p>ONLINE</p>
+          </div>
+      </div>
+      <div class="credit-calc-output-calculation" id="id_overdron">
+        <br><p align="center" style="color: red; font-size: 20px;">Временно приостановлен</p>
+      </div>
+    </div>
+
+    <div class="credit-calc-output-conteiner" id="id_spray1">
+        <div class="credit-calc-output-name" id="id_spraydiv">
+          <p align="center">Спрауная+</p>
+        </div>
+      <div class="credit-calc-output-calculation" id="id_spray">
+        <br><p align="center" style="color: red; font-size: 20px;">Временно приостановлен</p>
+      </div>
+    </div>
+
+
+
+    <div class="credit-calc-output-conteiner" id="id_overdr1">
+      <div class="credit-calc-output-name" id="id_overdrdiv">
+          <p align="center" id="id_overdrdiv">Овердрафт</p>
+      </div>
+      <div class="credit-calc-output-calculation" id="id_overdr">
+        <br>
+      </div>
+    </div>
+
+    <div class="credit-calc-output-conteiner" id="id_ylas1">
+        <div class="credit-calc-output-name" id="id_ylasdiv">
+          <p align="center">Уласная маёмасть</p>
+        </div>
+      <div class="credit-calc-output-calculation" id="id_ylas">
+        <br><p align="center" style="color: red; font-size: 20px;">Временно приостановлен</p>
+      </div>
+    </div>
+
+
+    <div class="credit-calc-output-conteiner" id="id_ydali1">
+        <div class="credit-calc-output-name" id="id_ydalidiv">
+          <p align="center">Удалы разлик</p>
+        </div>
+      <div class="credit-calc-output-calculation" id="id_ydali">
+        <br><p align="center" style="color: red; font-size: 20px;">Временно приостановлен</p>
+      </div>
+    </div>
+
+
+
+    <div class="credit-calc-output-conteiner" id="id_lagodni1">
+        <div class="credit-calc-output-name" id="id_lagodnidiv">
+          <p align="center">Лагодны</p>
+        </div>
+      <div class="credit-calc-output-calculation" id="id_lagodni">
+        <br>
+      </div>
+    </div>
+
+    <div class="credit-calc-output-conteiner" id="id_sprintar1">
+        <div class="credit-calc-output-name" id="id_sprintardiv">
+          <p align="center">Спрынтар</p>
+        </div>
+      <div class="credit-calc-output-calculation" id="id_sprintar">
+        <br><p align="center" style="color: red; font-size: 20px;">Временно приостановлен</p>
+      </div>
+    </div>
+
+    <div class="credit-calc-output-conteiner" id="id_dabrabit1">
+          <div class="credit-calc-output-name" id="id_dabrabitdiv">
+            <p align="center">Дабрабыт</p>
+          </div>
+        <div class="credit-calc-output-calculation" id="id_dabrabit">
+          <br><p align="center" style="color: red; font-size: 20px;">Временно приостановлен</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="terms" id="id_ylasdivshow">
+      <div class="name">
+        <p>Уласная маёмасть</p>
+      </div>
+        <div class="back">
+          <p>Вернуться</p>
+        </div>
+      <div>
+        <div class="menu">
+          <div class="menu-switch2" id="id_ylasmenuobesp">
+            <p>Обеспечение по кредитованию</p>
+          </div>
+          <div class="menu-switch2" id="id_ylasmenuobespref">
+            <p>Обеспечение по рефинансированию</p>
+          </div>
+          <div class="menu-switch1" id="id_ylasmenugraf">
+            <p>График погашения</p>
+          </div>
+          <div class="menu-switch1" id="id_ylasmenuyslza">
+            <p>Условия для заявителя</p>
+          </div>
+          <div class="menu-switch1" id="id_ylasmenuyslp">
+            <p>Условия для поручителя</p>
+          </div>
+          <div class="menu-switch2" id="id_ylasmenudocza">
+            <p>Документы необходимые заявителю</p>
+          </div>
+          <div class="menu-switch2" id="id_ylasmenudocp">
+            <p>Документы необходимые поручителю</p>
+          </div>
+          <div class="menu-switch1" id="id_ylasmenudop">
+            <p>Дополнительные условия</p>
+          </div>
+          <div class="menu-switch1" id="id_ylasmenublinger">
+            <p>Текст для блингера</p>
+          </div>
+          <a href="https://www.belveb.by/individual/kredity/finansirovanie-nedvizhimosti/ulasnaya-mayemasts/" target="_blank">
+            <div class="menu-switch2">
+              <p>Общие условия (ссылка на сайт)</p>
+            </div>
+          </a>
+        </div>
+        <div class="terms-ylas" id="id_ylasysl1">
+          <table class="table">
+            <tr>
+              <td colspan="2">Сумма менее 60% от стоимости</td>
+            </tr>
+            <tr>
+              <td>Сумма до 30000 бел. рублей</td>
+              <td>Сумма до 30000 бел. рублей</td>
+            </tr>
+            <tr>
+              <td>Поручительство не менее <br> 2 физических лиц</td>
+              <td>Поручительство не менее <br> 2 физических лиц <br><br> ИЛИ <br><br> недвижимость в залог</td>
+            </tr>
+            <tr>
+              <td colspan="2">Сумма более 60% от стоимости</td>
+            </tr>
+            <tr>
+              <td colspan="2">Поручительство не менее <br> 2 физических лиц <br><br> И <br><br> недвижимость в залог</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <p align="center" style="line-height: 1">До оформления залога при строительстве поручительство 1 физического лица ИЛИ залог недвижимости находящейся в собственности кредитополучателя</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="terms-ylas" id="id_ylasysl2">
+          <table style="height: 500px" class="table">
+            <tr>
+              <td>Сумма менее 50 000 бел. рублей</td>
+            </tr>
+            <tr>
+              <td>Поручительство не менее <br> 2 физических лиц</td>
+            </tr>
+            <tr>
+              <td>Сумма более 50 000 бел. рублей</td>
+            </tr>
+            <tr>
+              <td>Поручительство не менее <br> 2 физических лиц <br><br> И <br><br> залог жилой недвижимости третьих лиц, либо залог жилой недвижимости заявителя, либо дополнительное поручительство не менее 1 (одного) физического лица</td>
+            </tr>
+          </table>
+        </div>
+        <div class="terms-ylas" id="ylasgraf">
+
+          <table id="tableylasras">
+            <tbody id="id_tableylasrasjs">
+              <div>
+                <p>Необходимо произвести расчёт</p>
+              </div>
+            </tbody>
+          </table>
+        </div>
+        <div class="terms-ylas" id="ylasyslzayavitel">
+          <p> Дееспособные в полном объеме физические лица — граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим требованиям: </p>
+          <p>1) Возраст: не менее 21 года и не более 55 лет на дату представления документов;</p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 6 (шести) месяцев;</p>
+          <p>6) Для заявителей мужского пола призывного возраста — прохождение военной службы по призыву; освобождение либо отсрочка от прохождения военной службы по призыву на весь срок кредитования.</p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ ИП</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ (Если трудоустроена не менее 6 месяцев до декрета)</b></p>
+          <p style="color: red;"><b>МОЖНО ПЕНСИОНЕРОВ</b></p>
+        </div>
+        <div class="terms-ylas" id="ylasyslporychitel">
+          <p> Поручителями могут выступать физические лица (кроме индивидуальных предпринимателей, являющихся плательщиками единого налога, и индивидуальных предпринимателей, применяющих упрощенную систему налогообложения) — граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим требованиям в совокупности:</p>
+          <p>1) Возраст: не менее 21 года и не более 55 лет на дату представления документов;</p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 3 (трех) месяцев;</p>
+          <p>6) Для заявителей мужского пола призывного возраста — прохождение военной службы по призыву; освобождение либо отсрочка от прохождения военной службы по призыву на весь срок кредитования.</p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ ИП ПЛАТЕЛЬЩИКОВ ПОДОХОДНОГО НАЛОГА</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ (Если трудоустроена не менее 3 месяцев до декрета)</b></p>
+          <p style="color: red;"><b>МОЖНО ПЕНСИОНЕРОВ</b></p>
+          <p style="font-size: 24px;">Оформление договора поручительства 20 бел. рублей.</p>
+        </div>
+        <div class="terms-ylas" id="ylasdoczayavitel">
+          <p>Заявители предоставляют в Банк при подаче заявки: </p>
+          <p>1) Паспорт (для граждан Республики Беларусь), вид на жительство (для иностранных граждан и лиц без гражданства, постоянно проживающих на территории Республики Беларусь);</p>
+          <p>2) Справку о доходах заявителя и/или справку о доходах индивидуального предпринимателя; лица, получающие денежные выплаты в виде пенсии, в обязательном порядке предоставляют справку о размере получаемой пенсии, выданную уполномоченным органом; <br> Индивидуальные предприниматели предоставляют также документы, подтверждающие уплату налогов за последние 6 месяцев; </p>
+          <p>3) Документы, подтверждающие факт прохождения ранее, освобождения либо отсрочки от прохождения военной службы по призыву (военный билет, приписное свидетельство) — для заявителя мужского пола призывного возраста;</p>
+          <p>4) Заявитель — индивидуальный предприниматель представляет свидетельство о регистрации в качестве индивидуального предпринимателя и специальное разрешение (лицензию) на осуществление определенного вида деятельности (при наличии);</p>
+          <p>5) Предварительный договор купли продажи;</p>
+          <p>6) В случае оформления залога: документ об оценке недвижимости.</p>
+        </div>
+        <div class="terms-ylas" id="ylasdocporychitel">
+          <p>Поручители предоставляют в Банк при подаче заявки: </p>
+          <p>1) Паспорт (для граждан Республики Беларусь), вид на жительство (для иностранных граждан и лиц без гражданства, постоянно проживающих на территории Республики Беларусь);</p>
+          <p>2) Справку о доходах поручителя и/или справку о доходах индивидуального предпринимателя; </p>
+          <p>3) Документы, подтверждающие факт прохождения ранее, освобождения либо отсрочки от прохождения военной службы по призыву (военный билет, приписное свидетельство) — для заявителя мужского пола призывного возраста;</p>
+          <p>4) Поручитель — индивидуальный предприниматель — плательщик подоходного налога представляет свидетельство о регистрации в качестве индивидуального предпринимателя и специальное разрешение (лицензию) на осуществление определенного вида деятельности (при наличии).</p>
+        </div>
+        <div class="terms-ylas" id="ylasysldop">
+          <p>Дополнительные условия: </p>
+          <p>1) Есть возможность отсрочки возврата (погашения) основного долга по кредиту;</p>
+          <p>2) Допускается возможность увеличение размера кредита;</p>
+          <p>3) Необходимо страховать недвижимость, передаваемую в залог Банку.</p>
+        </div>
+        <div class="terms-ylas" id="blingerylastext">
+          <p> Банк может Вам предолжить кредитную программу "Уласная маёмасць". Процентная ставка составляет 13.5% годовых. Кредит предоставляется на срок 20 лет, участие Банка в финансируемом проекте должно составлять не более 80% от общей стоимости недвижимости. Возможен расчёт совокупного дохода близких родственников. Предусмотрена возможность досрочного погашения.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="terms" id="id_dryshdivshow">
+      <div class="name">
+        <p>Дружная будоуля</p>
+      </div>
+      <div class="back" id="id_backdrysh">
+        <p>Вернуться</p>
+      </div>
+      <div>
+        <div class="menu">
+            <div class="menu-switch1" id="id_dryshmenuobesp">
+              <p >Обеспечение</p>
+            </div>
+            <div class="menu-switch1" id="id_dryshmenugraf">
+              <p >График погашения</p>
+            </div>
+            <div class="menu-switch1" id="id_dryshmenuyslza">
+              <p >Условия для заявителя</p>
+            </div>
+            <div class="menu-switch1" id="id_dryshmenuyslp">
+              <p >Условия для поручителя</p>
+            </div>
+            <div class="menu-switch2" id="id_dryshmenudocza">
+              <p >Документы необходимые заявителю</p>
+            </div>
+            <div class="menu-switch2" id="id_dryshmenudocp">
+              <p >Документы необходимые поручителю</p>
+            </div>
+            <div class="menu-switch1" id="id_dryshmenudop">
+              <p >Дополнительные условия</p>
+            </div>
+            <div class="menu-switch1" id="id_dryshmenublinger">
+              <p >Текст для блингера</p>
+            </div>
+          <a href="https://www.belveb.by/individual/kredity/finansirovanie-nedvizhimosti/druzhnaya-budo-lya/" target="_blank">
+            <div class="menu-switch2">
+              <p >Общие условия (ссылка на сайт)</p>
+            </div>
+          </a>
+        </div>
+        <div class="terms-drysh" id="id_dryshysl1">
+          <table class="table">
+            <tr>
+              <td colspan="2"><p >Сумма менее 60% от стоимости</p></td>
+            </tr>
+            <tr>
+              <td><p >Сумма до 30000 бел. рублей</p></td>
+              <td><p >Сумма до 30000 бел. рублей</p></td>
+            <tr>
+              <td><p ><br><br>Поручительство не менее <br> 2 физических лиц</p></td>
+              <td><p >Поручительство не менее <br> 2 физических лиц <br><br> ИЛИ <br><br> недвижимость в залог </p></td>
+            </tr>
+            <tr>
+              <td colspan="2"><p >Сумма более 60% от стоимости</p></td>
+            </tr>
+            <tr>
+              <td colspan="2"><p >Поручительство не менее <br> 2 физических лиц <br><br> И <br><br> недвижимость в залог </p></td>
+            </tr>
+            <tr>
+              <td colspan="2"><p  style="line-height: 1">До оформления залога при строительстве поручительство 1 физического лица ИЛИ залог недвижимости находящейся в собственности кредитополучателя</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="terms-drysh" id="dryshgraf">
+          <table id="tabledryshras">
+            <tbody id="id_tabledryshrasjs">
+              <div>
+                <p>Необходимо произвести расчёт</p>
+              </div>
+            </tbody>
+          </table>
+        </div>
+        <div class="terms-drysh" id="dryshyslzayavitel">
+          <p> Дееспособные в полном объеме физические лица — граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим требованиям: </p>
+          <p>1) Возраст: не менее 21 года и не более 55 лет на дату представления документов;</p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 6 (шести) месяцев;</p>
+          <p>6) Для заявителей мужского пола призывного возраста — прохождение военной службы по призыву; освобождение либо отсрочка от прохождения военной службы по призыву на весь срок кредитования.</p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ ИП</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ</b></p>
+          <p style="color: red;"><b>МОЖНО ПЕНСИОНЕРОВ</b></p>
+        </div>
+        <div class="terms-drysh" id="dryshyslporychitel">
+          <p> Поручителями могут выступать физические лица (кроме индивидуальных предпринимателей, являющихся плательщиками единого налога, и индивидуальных предпринимателей, применяющих упрощенную систему налогообложения) — граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим требованиям в совокупности:</p>
+          <p>1) Возраст: не менее 21 года и не более 60 лет на дату представления документов;</p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 3 (трех) месяцев;</p>
+          <p>6) Для заявителей мужского пола призывного возраста — прохождение военной службы по призыву; освобождение либо отсрочка от прохождения военной службы по призыву на весь срок кредитования.</p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ ИП ПЛАТЕЛЬЩИКОВ ПОДОХОДНОГО НАЛОГА</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ</b></p>
+          <p style="color: red;"><b>МОЖНО ПЕНСИОНЕРОВ</b></p>
+          <p style="font-size: 24px;">Оформление договора поручительства 20 бел. рублей.</p>
+        </div>
+        <div class="terms-drysh" id="dryshdoczayavitel">
+          <p>Заявители предоставляют в Банк при подаче заявки: </p>
+          <p>1) Паспорт (для граждан Республики Беларусь), вид на жительство (для иностранных граждан и лиц без гражданства, постоянно проживающих на территории Республики Беларусь);</p>
+          <p>2) Справку о доходах заявителя и/или справку о доходах индивидуального предпринимателя; лица, получающие денежные выплаты в виде пенсии, в обязательном порядке предоставляют справку о размере получаемой пенсии, выданную уполномоченным органом; <br> Индивидуальные предприниматели предоставляют также документы, подтверждающие уплату налогов за последние 6 месяцев; </p>
+          <p>3) Документы, подтверждающие факт прохождения ранее, освобождения либо отсрочки от прохождения военной службы по призыву (военный билет, приписное свидетельство) — для заявителя мужского пола призывного возраста;</p>
+          <p>4) Заявитель — индивидуальный предприниматель представляет свидетельство о регистрации в качестве индивидуального предпринимателя и специальное разрешение (лицензию) на осуществление определенного вида деятельности (при наличии);</p>
+          <p>5) Предварительный договор купли продажи;</p>
+          <p>6) В случае оформления залога: документ об оценке недвижимости.</p>
+        </div>
+        <div class="terms-drysh" id="dryshdocporychitel">
+          <p>Поручители предоставляют в Банк при подаче заявки: </p>
+          <p>1) Паспорт (для граждан Республики Беларусь), вид на жительство (для иностранных граждан и лиц без гражданства, постоянно проживающих на территории Республики Беларусь);</p>
+          <p>2) Справку о доходах поручителя и/или справку о доходах индивидуального предпринимателя; </p>
+          <p>3) Документы, подтверждающие факт прохождения ранее, освобождения либо отсрочки от прохождения военной службы по призыву (военный билет, приписное свидетельство) — для заявителя мужского пола призывного возраста;</p>
+          <p>4) Поручитель — индивидуальный предприниматель — плательщик подоходного налога представляет свидетельство о регистрации в качестве индивидуального предпринимателя и специальное разрешение (лицензию) на осуществление определенного вида деятельности (при наличии).</p>
+        </div>
+        <div class="terms-drysh" id="dryshysldop">
+          <p>Дополнительные условия: </p>
+          <p>1) Есть возможность отсрочки возврата (погашения) основного долга по кредиту;</p>
+          <p>2) Допускается возможность увеличение размера кредита;</p>
+          <p>3) Необходимо страховать недвижимость, передаваемую в залог Банку.</p>
+        </div>
+        <div class="terms-drysh" id="blingerdryshtext">
+          <p>Банк может Вам предолжить кредитную программу "Дружная будоуля". Процентная ставка составляет 13.5% годовых. Кредит предоставляется на срок 20 лет, участие Банка в финансируемом проекте должно составлять не более 80% от общей стоимости недвижимости. Возможен расчёт совокупного дохода близких родственников. Предусмотрена возможность досрочного погашения.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="terms" id="id_lagodnidivshow">
+      <div class="name">
+        <p>Лагодны</p>
+      </div>
+      <div class="back" id="id_backlagodni">
+        <p>Вернуться</p>
+      </div>
+      <div>
+        <div class="menu">
+          <div class="menu-switch1" id="id_lagodnimenugraf">
+            <p align="center">График погашения</p>
+          </div>
+          <div class="menu-switch1" id="id_lagodnimenuyslza">
+            <p align="center">Условия для заявителя</p>
+          </div>
+          <div class="menu-switch2" id="id_lagodnimenudocza">
+            <p align="center">Документы необходимые заявителю</p>
+          </div>
+          <div class="menu-switch1" id="id_lagodnimenudop">
+            <p align="center">Дополнительные условия</p>
+          </div>
+          <div class="menu-switch1" id="id_lagodnimenublinger">
+            <p align="center">Текст для блингера</p>
+          </div>
+          <a href="https://www.belveb.by/individual/kredity/potrebitelskie-nuzhdy/lagodni/" target="_blank">
+            <div class="menu-switch2">
+              <p align="center">Общие условия (ссылка на сайт)</p>
+            </div>
+          </a>
+        </div>
+        <div class="terms-lagodni" id="lagodnigraf">
+          <table id="tablelagodniras">
+            <tbody id="id_tablelagodnirasjs">
+              <div>
+                <p>Необходимо произвести расчёт</p>
+              </div>
+            </tbody>
+          </table>
+        </div>
+        <div class="terms-lagodni" id="lagodniyslzayavitel">
+          <p> Физические лица — граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим требованиям: </p>
+          <p>1) Возраст: не менее 21 года на дату представления заявителем документов и не более 63 лет – для женщин и 68 лет – для мужчин на дату окончания срока возврата (погашения) кредита;</p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 3 (трёх) месяцев;</p>
+          <p>6) Для заявителей мужского пола призывного возраста — прохождение военной службы по призыву; освобождение либо отсрочка от прохождения военной службы по призыву на весь срок кредитования.</p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ ИП</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ</b></p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ ПЕНСИОНЕРОВ</b></p>
+        </div>
+        <div class="terms-lagodni" id="lagodnidoczayavitel">
+          <p>Заявители предоставляют в Банк при подаче заявки: </p>
+          <p>1) Паспорт (для граждан Республики Беларусь), вид на жительство (для иностранных граждан и лиц без гражданства, постоянно проживающих на территории Республики Беларусь);</p>
+          <p>2) Справку о доходах заявителя и/или справку о доходах индивидуального предпринимателя; лица, получающие денежные выплаты в виде пенсии, в обязательном порядке предоставляют справку о размере получаемой пенсии, выданную уполномоченным органом; <br> Индивидуальные предприниматели предоставляют также документы, подтверждающие уплату налогов за последние 3 месяца; </p>
+          <p>3) Документы, подтверждающие факт прохождения ранее, освобождения либо отсрочки от прохождения военной службы по призыву (военный билет, приписное свидетельство) — для заявителя мужского пола призывного возраста;</p>
+          <p>4) Заявитель — индивидуальный предприниматель представляет свидетельство о регистрации в качестве индивидуального предпринимателя и специальное разрешение (лицензию) на осуществление определенного вида деятельности (при наличии);</p>
+        </div>
+        <div class="terms-lagodni" id="lagodniysldop">
+          <p>Дополнительные условия: </p>
+          <p>1) Нет возможности отсрочки возврата (погашения) основного долга по кредиту;</p>
+          <p>2) Допускается возможность предоставления нескольких кредитов при условии, что сумма остатка задолженности по кредитам не превысит максимальную сумму кредита для соответствующей категории клиента;</p>
+        </div>
+        <div class="terms-lagodni" id="blingerlagodnitext">
+          <p>Надо ещё придумать</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="terms" id="id_dabrabitdivshow">
+      <div class="name">
+        <p>Дабрабыт</p>
+      </div>
+        <div class="back" id="id_backdabrabit">
+          <p>Вернуться</p>
+        </div>
+      <div>
+        <div class="menu">
+            <div class="menu-switch1" id="id_dabrabitmenuobesp">
+              <p align="center">Обеспечение</p>
+            </div>
+            <div class="menu-switch1" id="id_dabrabitmenugraf">
+              <p align="center">График погашения</p>
+            </div>
+            <div class="menu-switch1" id="id_dabrabitmenuyslza">
+              <p align="center">Условия для заявителя</p>
+            </div>
+            <div class="menu-switch1" id="id_dabrabitmenuyslp">
+              <p align="center">Условия для поручителя</p>
+            </div>
+            <div class="menu-switch2" id="id_dabrabitmenudocza">
+              <p align="center">Документы необходимые заявителю</p>
+            </div>
+            <div class="menu-switch2" id="id_dabrabitmenudocp">
+              <p align="center">Документы необходимые поручителю</p>
+            </div>
+            <div class="menu-switch1" id="id_dabrabitmenudop">
+              <p align="center">Дополнительные условия</p>
+            </div>
+            <div class="menu-switch1" id="id_dabrabitmenublinger">
+              <p align="center">Текст для блингера</p>
+            </div>
+            <a href="https://www.belveb.by/individual/kredity/potrebitelskie-nuzhdy/dabrabyt/" target="_blank">
+              <div class="menu-switch2">
+                <p align="center">Общие условия (ссылка на сайт)</p>
+              </div>
+            </a>
+        </div>
+
+        <div class="terms-dabrabit" id="id_dabrabitysl1">
+          <table class="table" style="height: 170px;">
+            <tr>
+              <td><p>Сумма до 30000 бел. рублей</p></td>
+              <td><p>Сумма от 30000 бел. рублей</p></td>
+            <tr>
+              <td><p>Поручительство не менее 1 физ. лица.</p></td>
+              <td><p>Поручительство не менее 2 физ. лиц.</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="terms-dabrabit" id="dabrabitgraf">
+          <table id="tabledabrabitras">
+            <tbody id="id_tabledabrabitrasjs">
+              <div>
+                <p>Необходимо произвести расчёт</p>
+              </div>
+            </tbody>
+          </table>
+        </div>
+        <div class="terms-dabrabit" id="dabrabityslzayavitel">
+          <p> Физические лица — граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим требованиям: </p>
+          <p>1) Возраст: не менее 21 года на дату представления заявителем документов и не более 63 лет – для женщин и 68 лет – для мужчин на дату окончания срока возврата (погашения) кредита;</p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 3 (трёх) месяцев;</p>
+          <p>6) Для заявителей мужского пола призывного возраста — прохождение военной службы по призыву; освобождение либо отсрочка от прохождения военной службы по призыву на весь срок кредитования.</p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ ИП</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ</b></p>
+          <p style="color: red;"><b>МОЖНО ПЕНСИОНЕРАМ</b></p>
+        </div>
+        <div class="terms-dabrabit" id="dabrabityslporychitel">
+          <p> Поручителями могут выступать физические лица (кроме индивидуальных предпринимателей, являющихся плательщиками единого налога, и индивидуальных предпринимателей, применяющих упрощенную систему налогообложения) — граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим требованиям в совокупности:</p>
+          <p>1) Возраст: не менее 21 года на дату представления поручителем документов и не более 58 лет – для женщин и 63 лет – для мужчин на дату окончания срока возврата (погашения) кредита;</p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 3 (трех) месяцев;</p>
+          <p>6) Для заявителей мужского пола призывного возраста — прохождение военной службы по призыву; освобождение либо отсрочка от прохождения военной службы по призыву на весь срок кредитования.</p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ ИП ПЛАТЕЛЬЩИКОВ ПОДОХОДНОГО НАЛОГА</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ</b></p>
+          <p style="color: red;"><b>МОЖНО ПЕНСИОНЕРАМ</b></p>
+          <p style="font-size: 24px;">Оформление договора поручительства 20 бел. рублей.</p>
+        </div>
+        <div class="terms-dabrabit" id="dabrabitdoczayavitel">
+          <p>Заявители предоставляют в Банк при подаче заявки: </p>
+          <p>1) Паспорт (для граждан Республики Беларусь), вид на жительство (для иностранных граждан и лиц без гражданства, постоянно проживающих на территории Республики Беларусь);</p>
+          <p>2) Справку о доходах заявителя и/или справку о доходах индивидуального предпринимателя; лица, получающие денежные выплаты в виде пенсии, в обязательном порядке предоставляют справку о размере получаемой пенсии, выданную уполномоченным органом; <br> Индивидуальные предприниматели предоставляют также документы, подтверждающие уплату налогов и выписку по оборотам за последние 3 месяца; </p>
+          <p>3) Документы, подтверждающие факт прохождения ранее, освобождения либо отсрочки от прохождения военной службы по призыву (военный билет, приписное свидетельство) — для заявителя мужского пола призывного возраста;</p>
+          <p>4) Заявитель — индивидуальный предприниматель представляет свидетельство о регистрации в качестве индивидуального предпринимателя и специальное разрешение (лицензию) на осуществление определенного вида деятельности (при наличии);</p>
+        </div>
+        <div class="terms-dabrabit" id="dabrabitdocporychitel">
+          <p>Поручители предоставляют в Банк при подаче заявки: </p>
+          <p>1) Паспорт (для граждан Республики Беларусь), вид на жительство (для иностранных граждан и лиц без гражданства, постоянно проживающих на территории Республики Беларусь);</p>
+          <p>2) Справку о доходах заявителя и/или справку о доходах индивидуального предпринимателя; лица, получающие денежные выплаты в виде пенсии, в обязательном порядке предоставляют справку о размере получаемой пенсии, выданную уполномоченным органом; <br> Индивидуальные предприниматели предоставляют также документы, подтверждающие уплату налогов и выписку по оборотам за последние 3 месяца;  </p>
+          <p>3) Документы, подтверждающие факт прохождения ранее, освобождения либо отсрочки от прохождения военной службы по призыву (военный билет, приписное свидетельство) — для заявителя мужского пола призывного возраста;</p>
+          <p>4) Поручитель — индивидуальный предприниматель — плательщик подоходного налога представляет свидетельство о регистрации в качестве индивидуального предпринимателя и специальное разрешение (лицензию) на осуществление определенного вида деятельности (при наличии).</p>
+        </div>
+        <div class="terms-dabrabit" id="dabrabitysldop">
+          <p>Дополнительные условия: </p>
+          <p>1) Нет возможности отсрочки возврата (погашения) основного долга по кредиту для клиентов категории Классик, Престиж, Премиум; <br> Для клиентов категории VIP - до 6 (шести) месяцев со дня предоставления кредита;</p>
+          <p>2) Допускается возможность предоставления нескольких кредитов при условии, что сумма остатка задолженности по кредитам не превысит максимальную сумму кредита для соответствующей категории клиента;</p>
+        </div>
+        <div class="terms-dabrabit" id="dabrabityslblinger">
+          <p>Надо ещё придумать</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="terms" id="id_ydalidivshow">
+      <div class="name">
+        <p>Удалы разлик</p>
+      </div>
+      <div class="back" id="id_backydali">
+        <p>Вернуться</p>
+      </div>
+      <div>
+        <div class="menu">
+          <div class="menu-switch1" id="id_ydalimenuobesp">
+            <p align="center">Обеспечение</p>
+          </div>
+          <div class="menu-switch1" id="id_ydalimenugraf">
+            <p align="center">График погашения</p>
+          </div>
+          <div class="menu-switch1" id="id_ydalimenuyslza">
+            <p align="center">Условия для заявителя</p>
+          </div>
+          <div class="menu-switch1" id="id_ydalimenuyslp">
+            <p align="center">Условия для поручителя</p>
+          </div>
+          <div class="menu-switch2" id="id_ydalimenudocza">
+            <p align="center">Документы необходимые заявителю</p>
+          </div>
+          <div class="menu-switch2" id="id_ydalimenudocp">
+            <p align="center">Документы необходимые поручителю</p>
+          </div>
+          <div class="menu-switch1" id="id_ydalimenudop">
+            <p align="center">Дополнительные условия</p>
+          </div>
+          <div class="menu-switch1" id="id_ydalimenublinger">
+            <p align="center">Текст для блингера</p>
+          </div>
+          <a href="https://www.belveb.by/individual/kredity/refinansirovanie-kreditov/udaly-razlik/" target="_blank">
+            <div class="menu-switch2">
+              <p align="center">Общие условия (ссылка на сайт)</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="terms-ydali" id="id_ydaliyslobesp">
+          <div>
+            <div class="ydaliyslobespkateg" id="id_ydaliyslobespkategkl">
+              <p align="center">Классик</p>
+            </div>
+            <div class="ydaliyslobespkateg" id="id_ydaliyslobespkategpr" style="width: 340px;">
+              <p align="center">Престиж     |    Премиум</p>
+            </div>
+            <div class="ydaliyslobespkateg" id="id_ydaliyslobespkategvip">
+              <p align="center">VIP</p>
+            </div>
+          </div>
+          <table class="table" style="height: 400px;" id="id_ydaliyslobesp2klassik">
+            <tr>
+              <td><p>Без поручителей</p></td>
+              <td><p>Сумма до 10000 бел. рублей</p></td>
+            </tr>
+            <tr>
+              <td><p>Не менее 1 поручителя</p></td>
+              <td><p>Сумма от 10000,01 до 20000 бел. рублей</p></td>
+            </tr>
+            <tr>
+              <td><p>Не менее 2 поручителей</p></td>
+              <td><p>Сумма от 20000,01 бел. рублей</p></td>
+            </tr>
+          </table>
+          <table class="table" style="height: 400px;" id="id_ydaliyslobesp2premiym">
+            <tr>
+              <td><p>Без поручителей</p></td>
+              <td><p>Сумма до 15000 бел. рублей</p></td>
+            </tr>
+            <tr>
+              <td><p>Не менее 1 поручителя</p></td>
+              <td><p>Сумма от 15000,01 до 20000 бел. рублей</p></td>
+            </tr>
+            <tr>
+              <td><p>Не менее 2 поручителей</p></td>
+              <td><p>Сумма от 20000,01 бел. рублей</p></td>
+            </tr>
+          </table>
+          <table class="table" style="height: 400px;" id="id_ydaliyslobesp2vip">
+            <tr>
+              <td><p>Без поручителей</p></td>
+              <td><p>Сумма до 22000 бел. рублей</p></td>
+            </tr>
+            <tr>
+              <td><p>Не менее 1 поручителя</p></td>
+              <td><p>Сумма от 22000,01 до 30000 бел. рублей</p></td>
+            </tr>
+            <tr>
+              <td><p>Не менее 2 поручителей</p></td>
+              <td><p>Сумма от 30000,01 бел. рублей</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="terms-ydali" id="ydaligraf">
+          <table id="tableydaliras">
+            <tbody id="id_tableydalirasjs">
+              <div>
+                <p>Необходимо произвести расчёт</p>
+              </div>
+            </tbody>
+          </table>
+        </div>
+        <div class="terms-ydali" id="ydaliyslzayavitel">
+          <p> Физические лица — граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим требованиям: </p>
+          <p>1) Возраст: не менее 21 года на дату представления заявителем документов и не более 63 лет – для женщин и 68 лет – для мужчин на дату окончания срока возврата (погашения) кредита;</p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 3 (трёх) месяцев;</p>
+          <p>6) Для заявителей мужского пола призывного возраста — прохождение военной службы по призыву; освобождение либо отсрочка от прохождения военной службы по призыву на весь срок кредитования.</p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ ИП</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ</b></p>
+          <p style="color: red;"><b>МОЖНО ПЕНСИОНЕРАМ</b></p>
+        </div>
+        <div class="terms-ydali" id="ydaliyslporychitel">
+          <p> Поручителями могут выступать физические лица (кроме индивидуальных предпринимателей, являющихся плательщиками единого налога, и индивидуальных предпринимателей, применяющих упрощенную систему налогообложения) — граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим требованиям в совокупности:</p>
+          <p>1) Возраст: не менее 21 года на дату представления поручителем документов и не более 58 лет – для женщин и 63 лет – для мужчин на дату окончания срока возврата (погашения) кредита;</p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 3 (трех) месяцев;</p>
+          <p>6) Для заявителей мужского пола призывного возраста — прохождение военной службы по призыву; освобождение либо отсрочка от прохождения военной службы по призыву на весь срок кредитования.</p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ ИП ПЛАТЕЛЬЩИКОВ ПОДОХОДНОГО НАЛОГА</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ</b></p>
+          <p style="color: red;"><b>МОЖНО ПЕНСИОНЕРАМ</b></p>
+          <p style="font-size: 24px;">Оформление договора поручительства 20 бел. рублей.</p>
+        </div>
+        <div class="terms-ydali" id="ydalidoczayavitel">
+          <p>Заявители предоставляют в Банк при подаче заявки: </p>
+          <p>1) Паспорт (для граждан Республики Беларусь), вид на жительство (для иностранных граждан и лиц без гражданства, постоянно проживающих на территории Республики Беларусь);</p>
+          <p>2) Справку о доходах заявителя и/или справку о доходах индивидуального предпринимателя; лица, получающие денежные выплаты в виде пенсии, в обязательном порядке предоставляют справку о размере получаемой пенсии, выданную уполномоченным органом; <br> Индивидуальные предприниматели предоставляют также документы, подтверждающие уплату налогов и выписку по оборотам за последние 3 месяца; </p>
+          <p>3) Документы, подтверждающие факт прохождения ранее, освобождения либо отсрочки от прохождения военной службы по призыву (военный билет, приписное свидетельство) — для заявителя мужского пола призывного возраста;</p>
+          <p>4) Заявитель — индивидуальный предприниматель представляет свидетельство о регистрации в качестве индивидуального предпринимателя и специальное разрешение (лицензию) на осуществление определенного вида деятельности (при наличии);</p>
+          <p>5) Договор по рефинансируемому кредиту со всеми дополнениями и соглашениями;</p>
+          <p>6) После принятия решение Банком необходимо предоставить справку о состоянии задолженности.</p>
+        </div>
+        <div class="terms-ydali" id="ydalidocporychitel">
+          <p>Поручители предоставляют в Банк при подаче заявки: </p>
+          <p>1) Паспорт (для граждан Республики Беларусь), вид на жительство (для иностранных граждан и лиц без гражданства, постоянно проживающих на территории Республики Беларусь);</p>
+          <p>2) Справку о доходах заявителя и/или справку о доходах индивидуального предпринимателя; лица, получающие денежные выплаты в виде пенсии, в обязательном порядке предоставляют справку о размере получаемой пенсии, выданную уполномоченным органом; <br> Индивидуальные предприниматели предоставляют также документы, подтверждающие уплату налогов и выписку по оборотам за последние 3 месяца;  </p>
+          <p>3) Документы, подтверждающие факт прохождения ранее, освобождения либо отсрочки от прохождения военной службы по призыву (военный билет, приписное свидетельство) — для заявителя мужского пола призывного возраста;</p>
+          <p>4) Поручитель — индивидуальный предприниматель — плательщик подоходного налога представляет свидетельство о регистрации в качестве индивидуального предпринимателя и специальное разрешение (лицензию) на осуществление определенного вида деятельности (при наличии).</p>
+        </div>
+        <div class="terms-ydali" id="ydaliysldop">
+          <p>Дополнительные условия: </p>
+          <p>1) Отсрочка возврата основного долга по кредиту: </p><p style="margin-left: 60;"> - до 2 (двух) месяцев со дня предоставления кредита - для клиентов категории Классик, Престиж, Премиум; </p><p style="margin-left: 60;"> - до 6 (шести) месяцев со дня предоставления кредита - для клиентов категории VIP ;</p>
+          <p>2) Допускается возможность предоставления нескольких кредитов при условии, что сумма остатка задолженности по кредитам не превысит максимальную сумму кредита для соответствующей категории клиента;</p>
+          <p>3) По настоящей программе кредитования кредит не предоставляется на рефинансирование:
+          <br> кредитов на финансирование недвижимости;
+          <br> кредитов, полученных ранее в ОАО «Банк БелВЭБ»;
+          <br> овердрафтных кредитов, по которым срок предоставления кредита (срок пользования лимитом овердрафта) не истек, и кредитов, предоставляемых на условиях открытия возобновляемой (невозобновляемой) кредитной линии, по которым срок возобновляемости кредитной линии (период выборки кредитной линии) не истек (не прекращен).</p>
+        </div>
+        <div class="terms-ydali" id="ydaliyslblinger">
+          <p>Надо ещё придумать</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="terms" id="id_hutkidivshow">
+      <div class="name">
+        <p>Хутки онлайн</p>
+      </div>
+      <div class="back" id="id_backhutki">
+        <p>Вернуться</p>
+      </div>
+      <div>
+        <div class="menu">
+          <div class="menu-switch1" id="id_hutkimenugraf">
+            <p>График погашения</p>
+          </div>
+          <div class="menu-switch1" id="id_hutkimenuyslza">
+            <p>Условия для заявителя</p>
+          </div>
+          <div class="menu-switch1" id="id_hutkimenudop">
+            <p>Дополнительные условия</p>
+          </div>
+          <div class="menu-switch1" id="id_hutkimenublinger">
+            <p>Текст для блингера</p>
+          </div>
+          <a href="https://hutki.belveb.by/" target="_blank">
+            <div class="menu-switch2" id="id_hutkimenuof">
+              <p>Ссылка на оформление онлайн</p>
+            </div>
+          </a>
+          <a href="https://www.belveb.by/individual/kredity/potrebitelskie-nuzhdy/khutki-anlayn/" target="_blank">
+            <div class="menu-switch2">
+              <p>Общие условия (ссылка на сайт)</p>
+            </div>
+          </a>
+        </div>
+        <div class="terms-hutki" id="hutkigraf">
+          <table id="tablehutkiras">
+            <tbody id="id_tablehutkirasjs">
+              <div>
+                <p>Необходимо произвести расчёт</p>
+              </div>
+            </tbody>
+          </table>
+        </div>
+        <div class="terms-hutki" id="hutkiyslzayavitel">
+          <p> Физические лица — граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим требованиям: </p>
+          <p>1) Возраст: не менее 21 года для женщин, 24 лет для мужчин на дату представления заявителем документов и не более 58 лет для женщин и 63 лет для мужчин на дату окончания срока возврата (погашения) кредита; </p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 3 (трёх) месяцев;</p>
+          <p style="color: red;"><b>НЕЛЬЗЯ ДЛЯ ИП</b></p>
+          <p style="color: red;"><b>НЕЛЬЗЯ ДЛЯ РАБОТАЮЩИХ НА ИП</b></p>
+          <p style="color: red;"><b>НЕЛЬЗЯ ПЕНСИОНЕРАМ</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ</b></p>
+        </div>
+        <div class="terms-hutki" id="hutkiysldop">
+          <p>Дополнительные условия: </p>
+          <p>1) Срок действия решения банка о предоставлении кредита составляет 24 часа с момента принятия решения;</p>
+          <p>2) Допускается возможность предоставления нескольких кредитов при условии, что сумма остатка задолженности по кредитам не превысит максимальную сумму кредита для соответствующей категории клиента;</p>
+          <p>3) Сумма кредита кратна 100 белорусским рублям; </p>
+          <p>4) Отсрочка погашения основного долга по кредиту не применяется.</p>
+        </div>
+        <div class="terms-hutki" id="hutkiyslblinger">
+          <p>Надо ещё придумать</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="terms" id="id_kliknidivshow">
+      <div class="name">
+        <p>Кликни грошы</p>
+      </div>
+      <div class="back" id="id_backklikni">
+        <p>Вернуться</p>
+      </div>
+      <div>
+        <div class="menu">
+          <div class="menu-switch1" id="id_kliknimenugraf">
+            <p>График погашения</p>
+          </div>
+            <div class="menu-switch1" id="id_kliknimenuyslza">
+              <p>Условия для заявителя</p>
+            </div>
+          <a href="#">
+            <div class="menu-switch1" id="id_klinimenudop">
+              <p>Дополнительные условия</p>
+            </div>
+          </a>
+          <div class="menu-switch1" id="id_kliknimenublinger">
+            <p>Текст для блингера</p>
+          </div>
+          <a href="https://www.belveb.by/individual/kredity/potrebitelskie-nuzhdy/klikni-groshy/" target="_blank">
+            <div class="menu-switch2">
+              <p>Общие условия (ссылка на сайт)</p>
+            </div>
+          </a>
+        </div>
+        <div class="terms-klikni" id="kliknigraf">
+          <table id="tableklikniras">
+            <tbody id="id_tablekliknirasjs">
+              <div>
+                <p>Необходимо произвести расчёт</p>
+              </div>
+            </tbody>
+          </table>
+        </div>
+        <div class="terms-klikni" id="klikniyslzayavitel">
+          <p> Физические лица — граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим требованиям: </p>
+          <p>1) Возраст: не менее 21 года для женщин, 24 лет для мужчин на дату представления заявителем документов и не более 63 лет для женщин и 63 лет для мужчин на дату окончания срока возврата (погашения) кредита; </p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 3 (трёх) месяцев;</p>
+          <p>6) Наличие Текущего зарплатного счета, открытого в банке не менее 3 (трех) месяцев, предшествующих подаче документов на получение кредита.</p>
+          <p style="color: red;"><b>НЕЛЬЗЯ ДЛЯ ИП</b></p>
+          <p style="color: red;"><b>НЕЛЬЗЯ ДЛЯ РАБОТАЮЩИХ НА ИП</b></p>
+          <p style="color: red;"><b>НЕЛЬЗЯ ПЕНСИОНЕРАМ</b></p>
+          <p style="color: red;"><b>НЕЛЬЗЯ В ДЕКРЕТЕ</b></p>
+        </div>
+        <div class="terms-klikni" id="klikniysldop">
+          <p>Дополнительные условия: </p>
+          <p>1) Срок действия решения банка о предоставлении кредита составляет 24 часа с момента принятия решения;</p>
+          <p>2) Допускается возможность предоставления нескольких кредитов при условии, что сумма остатка задолженности по кредитам не превысит максимальную сумму кредита для соответствующей категории клиента;</p>
+          <p>3) Сумма кредита кратна 100 белорусским рублям; </p>
+          <p>4) Отсрочка погашения основного долга по кредиту не применяется.</p>
+        </div>
+        <div class="terms-klikni" id="blingerkliknitext">
+          <p>Надо ещё придумать</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="terms" id="id_sprintardivshow">
+      <div class="name">
+        <p>Спрынтар</p>
+      </div>
+      <div class="back" id="id_backsprintar">
+        <p>Вернуться</p>
+      </div>
+      <div>
+        <div class="menu">
+          <div class="menu-switch1" id="id_sprintarmenugraf">
+            <p>График погашения</p>
+          </div>
+          <div class="menu-switch1" id="id_sprintarmenuyslza">
+            <p>Условия для заявителя</p>
+          </div>
+          <div class="menu-switch2" id="id_sprintarmenudocza">
+            <p>Документы необходимые заявителю</p>
+          </div>
+          <div class="menu-switch1" id="id_sprintarmenudop">
+            <p>Дополнительные условия</p>
+          </div>
+          <div class="menu-switch1" id="id_sprintarmenublinger">
+            <p>Текст для блингера</p>
+          </div>
+          <a href="https://www.belveb.by/individual/kredity/potrebitelskie-nuzhdy/spryntar/" target="_blank">
+            <div class="menu-switch2">
+              <p>Общие условия (ссылка на сайт)</p>
+            </div>
+          </a>
+        </div>
+        <div class="terms-sprintar" id="sprintargraf">
+          <table id="tablesprintarras">
+            <tbody id="id_tablesprintarrasjs">
+              <div>
+                <p>Необходимо произвести расчёт</p>
+              </div>
+            </tbody>
+          </table>
+        </div>
+        <div class="terms-sprintar" id="sprintaryslzayavitel">
+          <p> Физические лица — граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим требованиям: </p>
+          <p>1) Возраст: не менее 20 лет на дату представления заявителем документов и не более 68 лет на дату окончания срока возврата (погашения) кредита; </p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 3 (трёх) месяцев;</p>
+          <p style="color: red;"><b>МОЖНО ВООБЩЕ ДЛЯ ВСЕХ</b></p>
+        </div>
+        <div class="terms-sprintar" id="sprintardoczayavitel">
+          <p>Заявители предоставляют в Банк при подаче заявки: </p>
+          <p>1) Паспорт (для граждан Республики Беларусь), вид на жительство (для иностранных граждан и лиц без гражданства, постоянно проживающих на территории Республики Беларусь);</p>
+          <p>2) Документы, подтверждающие факт осуществления деятельности и получение дохода (выписки по расчетным счетам, декларации, документы, подтверждающие уплату налога, договоры аренды и т.д.), – для индивидуальных предпринимателей, физических лиц, осуществляющих трудовую деятельность без регистрации в качестве индивидуального предпринимателя, а также получающих доход по договорам аренды имущества;</p>
+          <p>3) Заявитель — индивидуальный предприниматель представляет свидетельство о регистрации в качестве индивидуального предпринимателя и специальное разрешение (лицензию) на осуществление определенного вида деятельности (при наличии);</p>
+        </div>
+        <div class="terms-sprintar" id="sprintarysldop">
+          <p>Дополнительные условия: </p>
+          <p>1) По настоящей программе кредитования одному физическому лицу может быть предоставлен один кредит;</p>
+          <p>2) По настоящей программе кредитования кредит может быть предоставлен физическим лицам, осуществляющим трудовую деятельность без регистрации в качестве индивидуального предпринимателя, а также получающим доход по договорам аренды имущества; </p>
+          <p>3) Отсрочка погашения основного долга по кредиту не применяется.</p>
+          <p>4) Для досрочного погашения части кредита по данной программе кредитования Вам необходимо:</p>
+            <p style="margin-left: 60;"> - Обратиться в банк с письменным заявлением не позднее, чем за 5 (пять) рабочих дней до расчетной даты, указанной в Вашем кредитном договоре;</p>
+            <p style="margin-left: 60;"> - Обеспечить наличие на текущем (расчетном) счете суммы, необходимой для погашения текущих платежей по кредитному договору и суммы, которую Вы планируете направить на досрочное погашение кредита.</p>
+        </div>
+        <div class="terms-sprintar" id="sprintaryslblinger">
+          <p>Надо ещё придумать</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="terms" id="id_svoechasdivshow">
+      <div class="name">
+        <p>Своечасовая</p>
+      </div>
+      <div class="back" id="id_backsvoechas">
+        <p>Вернуться</p>
+      </div>
+      <div>
+        <div class="menu">
+          <div class="menu-switch1" id="id_svoechasmenugraf">
+            <p>График погашения</p>
+          </div>
+          <div class="menu-switch1" id="id_svoechasmenuyslza">
+            <p>Условия для заявителя</p>
+          </div>
+          <div class="menu-switch1" id="id_svoechasmenudop">
+            <p>Дополнительные условия</p>
+          </div>
+          <div class="menu-switch1" id="id_svoechasmenublinger">
+            <p>Текст для блингера</p>
+          </div>
+          <a href="https://www.belveb.by/individual/kredity/potrebitelskie-nuzhdy/klikni-groshy/" target="_blank">
+            <div class="menu-switch2">
+              <p align="center">Общие условия (ссылка на сайт)</p>
+            </div>
+          </a>
+        </div>
+        <div class="terms-svoechas" id="svoechasgraf">
+          <table id="tablesvoechasras">
+            <tbody id="id_tablesvoechasrasjs">
+              <div>
+                <p>Необходимо произвести расчёт</p>
+              </div>
+            </tbody>
+          </table>
+        </div>
+        <div class="terms-svoechas" id="svoechasyslzayavitel">
+          <p> Физические лица — граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим требованиям: </p>
+          <p>1) Возраст: не менее 21 года для женщин, 24 лет для мужчин на дату представления заявителем документов и не более 63 лет для женщин и 63 лет для мужчин на дату окончания срока возврата (погашения) кредита; </p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 3 (трёх) месяцев;</p>
+          <p style="color: red;"><b>НЕЛЬЗЯ ДЛЯ ИП</b></p>
+          <p style="color: red;"><b>НЕЛЬЗЯ ДЛЯ РАБОТАЮЩИХ НА ИП</b></p>
+          <p style="color: red;"><b>НЕЛЬЗЯ ПЕНСИОНЕРАМ</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ</b></p>
+        </div>
+        <div class="terms-svoechas" id="svoechasysldop">
+          <p>Дополнительные условия: </p>
+          <p>1) Срок действия решения банка о предоставлении кредита составляет 24 часа с момента принятия решения;</p>
+          <p>2) Допускается возможность предоставления нескольких кредитов при условии, что сумма остатка задолженности по кредитам не превысит максимальную сумму кредита для соответствующей категории клиента;</p>
+          <p>3) Отсрочка погашения основного долга по кредиту не применяется.</p>
+          <p>4) Если в течение 3 (трех) месяцев со дня заключения кредитного договора кредитополучателем не была совершена ни одна расходная операция с применением кредитной карточки или ее реквизитов (за исключением операций по оплате вознаграждений в соответствии с Тарифами на операции и услуги), лимит задолженности уменьшается в 2 (два) раза со дня, следующего за днем истечения 3 (трех) месяцев с даты заключения кредитного договора;</p>
+          <p>5) Сумма кредита кратна 100,00 белорусского рубля. </p>
+          <br><br>
+          <p>Условия Grace-периода:</p>
+          <p style="text-indent: 50px">Первые 20 календарных дней после возникновения задолженности по основному долгу по кредиту кредитополучателю предоставляется grace-период.</p><p style="text-indent: 50px">
+             Если в течение 20 календарных дней со дня возникновения задолженности по основному долгу по кредиту кредитополучатель полностью погасит всю сумму задолженности по основному долгу по кредиту и процентам за пользование кредитом, начисленным за предыдущий месяц,
+             то проценты за пользование кредитом за период со дня, следующего за днем предоставления кредита, по день полного возврата (погашения) предоставленного кредита начисляются по ставке, предусмотренной Шкалой процентных ставок ОАО «Банк БелВЭБ»
+             по grace-периоду и действующей на дату подачи документов на получение кредита.</p><p style="text-indent: 50px">
+             Если кредитополучатель не обеспечит полный возврат (погашение) всей суммы задолженности по основному долгу по кредиту и процентам за пользование кредитом, начисленным за предыдущий месяц, в течение 20 календарных дней со дня ее возникновения,
+             то проценты за пользование кредитом начисляются в соответствии с основной процентной ставкой, предусмотренной Шкалой процентных ставок ОАО «Банк БелВЭБ» и действующей на дату подачи документов на получение кредита.</p><p style="text-indent: 50px">
+             По окончании периода возобновляемости кредитной линии процентная ставка устанавливается в соответствии со Шкалой процентных ставок ОАО «Банк БелВЭБ», действующей на дату подачи документов на получение кредита.
+             По окончании периода возобновляемости кредитной линии grace-период не действует (прекращается).</p>
+        </div>
+        <div class="terms-svoechas" id="svoechasyslblinger">
+          <p>Надо ещё придумать</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="terms" id="id_spraydivshow">
+      <div class="name">
+        <p align="center">Спрауная+</p>
+      </div>
+      <a href="#">
+        <div class="back" id="id_backspray">
+          <p align="center">Вернуться</p>
+        </div>
+      </a>
+      <div class="yslmain">
+        <div class="spraymenuysl">
+          <a href="#">
+            <div class="spraymenuysl1" id="id_spraymenugraf">
+              <p align="center">График погашения</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="spraymenuysl1" id="id_spraymenuyslza">
+              <p align="center">Условия для заявителя</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="spraymenuysl2" id="id_spraymenudocza">
+              <p align="center">Документы необходимые заявителю</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="spraymenuysl1" id="id_spraymenudop">
+              <p align="center">Дополнительные условия</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="spraymenuysl1" id="id_spraymenublinger">
+              <p align="center">Текст для блингера</p>
+            </div>
+          </a>
+          <a href="https://www.belveb.by/individual/kredity/potrebitelskie-nuzhdy/klikni-groshy/" target="_blank">
+            <div class="spraymenuysl2">
+              <p align="center">Общие условия (ссылка на сайт)</p>
+            </div>
+          </a>
+        </div>
+        <div class="spraygraf">
+          <div id="id_spraymenuobesp">
+            <p align="center">При сумме до 10000 бел. рублей без справки о доходах</p>
+          </div>
+          <table id="tablesprayras">
+            <tbody id="id_tablesprayrasjs">
+
+            </tbody>
+          </table>
+        </div>
+        <div class="sprayyslzayavitel">
+          <p> Физические лица — граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим требованиям: </p>
+          <p>1) Возраст: не менее 21 года на дату представления заявителем документов и не более 62 лет – для женщин и 67 лет – для мужчин;</p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 3 (трёх) месяцев;</p>
+          <p>6) Для заявителей мужского пола призывного возраста — прохождение военной службы по призыву; освобождение либо отсрочка от прохождения военной службы по призыву на весь срок кредитования.</p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ ИП</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ</b></p>
+          <p style="color: red;"><b>МОЖНО ПЕНСИОНЕРАМ</b></p>
+        </div>
+        <div class="spraydoczayavitel">
+          <p>Заявители предоставляют в Банк при подаче заявки : </p>
+          <p>1) Паспорт (для граждан Республики Беларусь), вид на жительство (для иностранных граждан и лиц без гражданства, постоянно проживающих на территории Республики Беларусь);</p>
+          <p>2) Документы, подтверждающие факт прохождения ранее, освобождения либо отсрочки от прохождения военной службы по призыву (военный билет, приписное свидетельство) — для заявителя мужского пола призывного возраста;</p>
+          <p style="color: red;">ЕСЛИ СУММА БОЛЕЕ 10000 бел. рублей:</p>
+          <p>3) Справку о доходах заявителя и/или справку о доходах индивидуального предпринимателя; лица, получающие денежные выплаты в виде пенсии, в обязательном порядке предоставляют справку о размере получаемой пенсии, выданную уполномоченным органом; <br> Индивидуальные предприниматели предоставляют также документы, подтверждающие уплату налогов и выписку по оборотам за последние 3 месяца; </p>
+          <p>4) Заявитель — индивидуальный предприниматель представляет свидетельство о регистрации в качестве индивидуального предпринимателя и специальное разрешение (лицензию) на осуществление определенного вида деятельности (при наличии);</p>
+        </div>
+        <div class="sprayysldop">
+          <p>Дополнительные условия: </p>
+          <p>1) При заключении кредитного договора бесплатно могут предоставляться:</p>
+          <p style="text-indent: 30px">- Visa Classic (неперсонализированная);</p>
+          <p style="text-indent: 30px">- Visa Gold (персонализированная);</p>
+          <p style="text-indent: 30px">- Visa Platinum – при сумме кредита не менее 7 000 рублей (персонализированная).</p>
+          <p>2) Период возобновляемости кредитной линии не продлевается: </p>
+          <p style="text-indent: 30px">- при наличии следующих обстоятельств, проверка которых осуществляется за 1 (один) месяц до окончания периода возобновляемости кредитной линии:</p>
+          <p style="text-indent: 50px">а) при наличии просроченной задолженности по кредиту и (или) процентам за пользование кредитом и (или) неустойке и (или) иным обязательствам в рамках заключенного кредитного договора по настоящей программе кредитования;</p>
+          <p style="text-indent: 50px">б) при отсутствии движения по счету по учету кредита в течение последнего 1(одного) года в рамках заключенного кредитного договора по настоящей программе кредитования;</p>
+          <p style="text-indent: 50px">в) в случае, если возраст Кредитополучателя на день проведения проверочных мероприятий достиг 67 лет – для мужчин и 62  – для женщин;</p>
+          <p style="text-indent: 30px">- при отказе Кредитополучателя от заключения дополнительного соглашения к кредитному договору об изменении размера процентной ставки в рамках заключенного кредитного договора по настоящей программе кредитования;</p>
+          <p style="text-indent: 30px">- в случае неполучения Кредитополучателем до окончания периода возобновляемости кредитной линии новой кредитной карточки;</p>
+          <p style="text-indent: 30px">- при отказе от продления периода возобновляемости кредитной линии Кредитополучателем либо Кредитодателем в рамках заключенного кредитного договора по настоящей программе кредитования.</p>
+          <p>3) По настоящей программе кредитования одному физическому лицу может быть предоставлен один кредит. </p>
+          <p>4) Если в течение первых 6 (шести) месяцев со дня заключения настоящего кредитного договора Кредитополучателем не была совершена ни одна расходная операция с применением кредитной карточки или ее реквизитов (за исключением операций по оплате вознаграждений в соответствии с Тарифами на операции и услуги) – период возобновляемости кредитной линии прекращается со дня, следующего за днем истечения 6 (шести)  месяцев с даты заключения кредитного договора.</p>
+          <p>5) Если в течение 3 (трех) месяцев со дня заключения кредитного договора кредитополучателем не была совершена ни одна расходная операция с применением кредитной карточки или ее реквизитов (за исключением операций по оплате вознаграждений в соответствии с Тарифами на операции и услуги), лимит задолженности уменьшается в 2 (два) раза со дня, следующего за днем истечения 3 (трех) месяцев с даты заключения кредитного договора;</p>
+          <br><br>
+          <p>Условия Grace-периода:</p>
+          <p style="text-indent: 50px">Первые 20 календарных дней после возникновения задолженности по основному долгу по кредиту кредитополучателю предоставляется grace-период.</p><p style="text-indent: 50px">
+             Если в течение 20 календарных дней со дня возникновения задолженности по основному долгу по кредиту кредитополучатель полностью погасит всю сумму задолженности по основному долгу по кредиту и процентам за пользование кредитом, начисленным за предыдущий месяц,
+             то проценты за пользование кредитом за период со дня, следующего за днем предоставления кредита, по день полного возврата (погашения) предоставленного кредита начисляются по ставке, предусмотренной Шкалой процентных ставок ОАО «Банк БелВЭБ»
+             по grace-периоду и действующей на дату подачи документов на получение кредита.</p><p style="text-indent: 50px">
+             Если кредитополучатель не обеспечит полный возврат (погашение) всей суммы задолженности по основному долгу по кредиту и процентам за пользование кредитом, начисленным за предыдущий месяц, в течение 20 календарных дней со дня ее возникновения,
+             то проценты за пользование кредитом начисляются в соответствии с основной процентной ставкой, предусмотренной Шкалой процентных ставок ОАО «Банк БелВЭБ» и действующей на дату подачи документов на получение кредита.</p><p style="text-indent: 50px">
+             По окончании периода возобновляемости кредитной линии процентная ставка устанавливается в соответствии со Шкалой процентных ставок ОАО «Банк БелВЭБ», действующей на дату подачи документов на получение кредита.
+             По окончании периода возобновляемости кредитной линии grace-период не действует (прекращается).</p>
+        </div>
+        <div class="sprayyslblinger">
+          <p>Надо ещё придумать</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="terms" id="id_paradadivshow">
+      <div class="name">
+        <p align="center">Партнёрская парада</p>
+      </div>
+      <a href="#">
+        <div class="back" id="id_backparada">
+          <p align="center">Вернуться</p>
+        </div>
+      </a>
+      <div class="yslmain">
+        <div class="paradamenuysl">
+          <a href="#">
+            <div class="paradamenuysl1" id="id_paradamenuobesp">
+              <p align="center">Обеспечение</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="paradamenuysl1" id="id_paradamenugraf">
+              <p align="center">График погашения</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="paradamenuysl1" id="id_paradamenuyslza">
+              <p align="center">Условия для заявителя</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="paradamenuysl1" id="id_paradamenuyslp">
+              <p align="center">Условия для поручителя</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="paradamenuysl2" id="id_paradamenudocza">
+              <p align="center">Документы необходимые заявителю</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="paradamenuysl2" id="id_paradamenudocp">
+              <p align="center">Документы необходимые поручителю</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="paradamenuysl1" id="id_paradamenudop">
+              <p align="center">Дополнительные условия</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="paradamenuysl1" id="id_paradamenublinger">
+              <p align="center">Текст для блингера</p>
+            </div>
+          </a>
+          <a href="https://www.belveb.by/individual/kredity/avtokreditovanie/" target="_blank">
+            <div class="paradamenuysl2">
+              <p align="center">Общие условия (ссылка на сайт)</p>
+            </div>
+          </a>
+        </div>
+        <div class="paradayslobesp">
+          <a href="#">
+            <div id="id_paradayslobesp2_1">
+              <p align="center">Партнёрская парада</p>
+            </div>
+          </a>
+          <a href="#">
+            <div id="id_paradayslobesp2_2">
+              <p align="center">LADA</p>
+            </div>
+          </a>
+          <a href="#">
+            <div id="id_paradayslobesp2_3">
+              <p align="center">NISSAN</p>
+            </div>
+          </a>
+          <div class="paradayslobesp2_1">
+            <div class="paradayslobesp2_1_1">
+              <p align="center">В случае приобретения автомобиля в ООО «Атлант-М Боровая», ООО «Атлант-М Восток», СООО «Автопалас-М», ООО «Автопромсервис», ООО «АПС Могилев плюс», ООО «Лозанж», ООО «Детур», ООО «Тофт», ООО «Пантен», ООО «Квилон»:</p>
+            </div>
+            <div class="paradayslobesp2_1_1o">
+              <p style="margin-left: 10px;">- при сумме кредита до 20 000 белорусских рублей включительно:</p>
+                <p style="margin-left: 50px;">неустойка (штраф, пеня);</p><br>
+              <p style="margin-left: 10px;">- при сумме кредита свыше 20 000 белорусских рублей до 35 000 белорусских рублей (включительно):</p>
+                <p style="margin-left: 50px;">неустойка (пеня, штраф);</p>
+                <p style="margin-left: 50px;">залог приобретаемого автомобиля в случае, если заявитель достигнет 58 лет – для женщин и 63 лет – для мужчин в период срока кредитования;</p><br>
+              <p style="margin-left: 10px;">- при сумме кредита свыше 35 000 белорусских рублей:</p>
+                <p style="margin-left: 50px;">неустойка (пеня, штраф);</p>
+                <p style="margin-left: 50px;">залог приобретаемого автомобиля;</p>
+            </div>
+            <div class="paradayslobesp2_1_2">
+              <p align="center">В иных случаях:</p>
+            </div>
+            <div class="paradayslobesp2_1_2o">
+              <p style="margin-left: 10px;">- при сумме кредита до 20 000 белорусских рублей включительно:</p>
+                <p style="margin-left: 50px;">неустойка (пеня, штраф);</p><br>
+              <p style="margin-left: 10px;">- при сумме кредита свыше 20 000 белорусских рублей:</p>
+                <p style="margin-left: 50px;">залог приобретаемого за счет кредитных средств автомобиля;</p>
+                <p style="margin-left: 50px;">неустойка (пеня, штраф).</p>
+            </div>
+          </div>
+          <div class="paradayslobesp2_2">
+            <p style="margin-left: 10px;">1. при сумме кредита до 35 000 рублей включительно: </p>
+              <p style="margin-left: 50px;">- неустойка (пеня, штраф),</p>
+              <p style="margin-left: 50px;">- залог приобретаемого автомобиля в следующих случаях:</p>
+                <p style="margin-left: 90px;">а) заявитель – гражданин Республики Беларусь, предоставивший сведения о доходе, полученном на территории Российской Федерации;</p>
+                <p style="margin-left: 90px;">б) заявитель достигнет 58 лет – для женщин и 63 лет – для мужчин в период срока кредитования;</p>
+                <p style="margin-left: 90px;">в) заявитель осуществляет деятельность в качестве индивидуального предпринимателя;</p>
+              <p style="margin-left: 50px;">в иных случаях при приобретении автомобиля в СОАО «Минск-Лада» залог приобретаемого автомобиля может быть предоставлен по желанию заявителя.</p><br>
+            <p style="margin-left: 10px;">2. при сумме кредита от 35 000 до 60 000 рублей включительно:</p>
+              <p style="margin-left: 50px;">- поручительство не менее одного физического лица либо залог приобретаемого за счет кредитных средств автомобиля,</p>
+              <p style="margin-left: 50px;">- неустойка (пеня, штраф);</p><br>
+            <p style="margin-left: 10px;">3. при сумме кредита свыше 60 000 рублей:</p>
+              <p style="margin-left: 50px;">- поручительство не менее одного физического лица;</p>
+              <p style="margin-left: 50px;">- залог приобретаемого за счет кредитных средств автомобиля;</p>
+              <p style="margin-left: 50px;">- неустойка (пеня, штраф).</p>
+          </div>
+          <div class="paradayslobesp2_3">
+            <p style="margin-left: 10px;">1. при сумме кредита до 20 000,00 белорусского рубля включительно:</p>
+              <p style="margin-left: 50px;">- неустойка (пеня, штраф),</p>
+                <p style="margin-left: 90px;">а) для заявителей – граждан Республики Беларусь, предоставивших сведения о доходе, полученном на территории Российской Федерации;</p>
+                <p style="margin-left: 90px;">б) для заявителей старше 58 лет для женщин и старше 63 лет для мужчин включительно на момент подачи заявления на получение кредита;</p>
+                <p style="margin-left: 90px;">в) для заявителей, осуществляющих предпринимательскую деятельность без образования юридического лица.</p><br>
+            <p style="margin-left: 10px;">2. при сумме кредита от 20 000,01 до 30 000,00 белорусского рубля включительно:</p>
+              <p style="margin-left: 50px;">- поручительство не менее одного физического лица либо залог приобретаемого за счет кредитных средств автомобиля,</p>
+              <p style="margin-left: 50px;">- неустойка (пеня, штраф);</p><br>
+            <p style="margin-left: 10px;">3. при сумме кредита свыше 30 000,00 белорусского рубля:</p>
+              <p style="margin-left: 50px;">- поручительство не менее одного физического лица;</p>
+              <p style="margin-left: 50px;">- залог приобретаемого за счет кредитных средств автомобиля;</p>
+              <p style="margin-left: 50px;">- неустойка (пеня, штраф).</p>
+          </div>
+        </div>
+        <div class="paradagraf">
+          <div class="paradayslgraf">
+            <p style="margin-left: 20px">Ставка льготного периода <input id="id_paradayslgrafstavka"  type="text" size="15"></p>
+            <pre style="margin-left: 20px">Срок льготного периода    <input id="id_paradayslgrafsrok" onkeyup = 'this.value=parseInt(this.value) | 0' type="text" size="15"></pre>
+            <p style="margin-left: 20px"><input type="button" onclick="paradarasism()" value="Рассчитать"></p>
+          </div>
+            <table id="id_tableparadarasjs">
+               <tbody id="id_tableparadarasjsref">
+
+               </tbody>
+            </table>
+        </div>
+        <div class="paradayslzayavitel">
+          <p> Физические лица — граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим требованиям: </p>
+          <p style="color: red; font-size: 24px;"><b>ДЛЯ ПАРНЁРСКОЙ ПАРАДЫ (обычной)</b></p>
+          <p>1) Возраст: не менее 21 года на момент подачи заявления на получение кредита и не более 58 лет – для женщин и 63 лет – для мужчин включительно на момент подачи заявления на получение кредита;</p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 3 (трех) месяцев на дату представления заявителем документов;</p>
+          <p>6) Физическое лицо (заявитель) – не является: не является индивидуальным предпринимателем, работником индивидуального предпринимателя,   не осуществляет предпринимательскую деятельность без образования юридического лица.</p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ ИП (оформление в офисе)</b></p>
+          <p style="color: red;"><b>НЕЛЬЗЯ ДЛЯ РАБОТАЮЩИХ НА ИП</b></p>
+          <p style="color: red;"><b>МОЖНО ПЕНСИОНЕРАМ</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ</b></p><br>
+          <p style="color: red; font-size: 24px;"><b>LADA</b></p>
+          <p>1) Возраст: не менее 21 года на дату представления заявителем документов и не более 58 лет – для женщин и 63 лет – в период срока кредитования;</p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь или на территории Российской Федерации (только для граждан Республики Беларусь);</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 3 (трех) месяцев на дату представления заявителем документов;</p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ ИП</b></p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ РАБОТАЮЩИХ НА ИП</b></p>
+          <p style="color: red;"><b>МОЖНО ПЕНСИОНЕРАМ</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ</b></p><br>
+          <p style="color: red; font-size: 24px;"><b>NISSAN</b></p>
+          <p>1) Возраст: не менее 21 года на дату представления заявителем документов и не более 58 лет – для женщин и 63 лет – для мужчин на дату окончания срока возврата (погашения) кредита;</p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь или на территории Российской Федерации (только для граждан Республики Беларусь);</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 3 (трех) месяцев на дату представления заявителем документов;</p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ ИП</b></p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ РАБОТАЮЩИХ НА ИП</b></p>
+          <p style="color: red;"><b>МОЖНО ПЕНСИОНЕРАМ</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ</b></p>
+        </div>
+        <div class="paradayslporychitel">
+          <p style="color: red; font-size: 24px;"><b>ДЛЯ ПАРНЁРСКОЙ ПАРАДЫ (обычной)</b></p>
+          <p><b>Без поручителей!</b></p><br>
+          <p style="color: red; font-size: 24px;"><b>LADA</b></p>
+          <p> Поручителями могут выступать физические лица (кроме индивидуальных предпринимателей, являющихся плательщиками единого налога, и индивидуальных предпринимателей, применяющих упрощенную систему налогообложения) — граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим требованиям в совокупности:</p>
+          <p>1) Возраст на дату подачи заявления на получение кредита: не менее 21 года и не более 58 лет – для женщин и 63 лет – для мужчин;</p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4) Постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5) Непрерывный стаж работы на текущем месте работы не менее 3 (трех) месяцев;</p>
+          <p>6) Для заявителей мужского пола призывного возраста — прохождение военной службы по призыву; освобождение либо отсрочка от прохождения военной службы по призыву на весь срок кредитования.</p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ ИП ПЛАТЕЛЬЩИКОВ ПОДОХОДНОГО НАЛОГА</b></p>
+          <p style="color: red;"><b>НЕЛЬЗЯ В ДЕКРЕТЕ</b></p>
+          <p style="color: red;"><b>НЕЛЬЗЯ ПЕНСИОНЕРАМ</b></p><br>
+          <p style="color: red; font-size: 24px;"><b>NISSAN</b></p>
+          <p> Физические лица – граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим условиям в совокупности:</p>
+          <p>1) Возраст: не менее 21 года на дату представления поручителем документов и не более 58 лет – для женщин и 63 лет – для мужчин на дату окончания срока возврата (погашения) кредита;</p>
+          <p>2) Регистрация на территории Республики Беларусь;</p>
+          <p>3) Наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>4. постоянный источник дохода на территории Республики Беларусь;</p>
+          <p>5. непрерывный стаж работы на текущем месте работы не менее 3 (трех) месяцев на дату представления поручителем документов.</p><br>
+          <p style="color: red;"><b>МОЖНО ДЛЯ ИП ПЛАТЕЛЬЩИКОВ ПОДОХОДНОГО НАЛОГА</b></p>
+          <p style="color: red;"><b>НЕЛЬЗЯ В ДЕКРЕТЕ</b></p>
+          <p style="color: red;"><b>НЕЛЬЗЯ ПЕНСИОНЕРАМ</b></p><br>
+          <p style="font-size: 24px;">Оформление договора поручительства 20 бел. рублей.</p>
+        </div>
+        <div class="paradadoczayavitel">
+          <p style="color: red; font-size: 24px;"><b>ДЛЯ ПАРНЁРСКОЙ ПАРАДЫ (обычной)</b></p>
+          <p>Оформляется онлайн, документы предоставлять не нужно</p>
+          <p style="color: red; font-size: 24px;"><b>LADA</b></p>
+          <p>1) Документы, подтверждающие получение дохода за последние 3 месяца:</p>
+            <p style="margin-left: 40px">Cправка о доходах</p>
+            <p style="margin-left: 40px">Индивидуальные предприниматели обязательно предоставляют  справку о доходах индивидуального предпринимателя,  а также документы, подтверждающие уплату налогов за последние 3 месяца;</p>
+          <p>2) Документы, подтверждающие факт прохождения ранее, освобождения либо отсрочки от прохождения военной службы по призыву (военный билет, приписное свидетельство) — для заявителя мужского пола призывного возраста;</p>
+          <p>Для ИП:</p>
+          <p>3) Свидетельство о регистрации в качестве индивидуального предпринимателя и специальное разрешение (лицензия) на осуществление определенного вида деятельности, который подлежит лицензированию, – для заявителя, занимающегося предпринимательской деятельностью без образования юридического лица;</p>
+          <p style="color: red; font-size: 24px;"><b>NISSAN</b></p>
+          <p>1) Документы, подтверждающие получение дохода за последние 3 месяца:</p>
+            <p style="margin-left: 40px">Cправка о доходах</p>
+            <p style="margin-left: 40px">Индивидуальные предприниматели обязательно предоставляют  справку о доходах индивидуального предпринимателя,  а также документы, подтверждающие уплату налогов за последние 3 месяца;</p>
+          <p>2) Документы, подтверждающие факт прохождения ранее, освобождения либо отсрочки от прохождения военной службы по призыву (военный билет, приписное свидетельство) — для заявителя мужского пола призывного возраста;</p>
+          <p>Для ИП:</p>
+          <p>3) Свидетельство о регистрации в качестве индивидуального предпринимателя и специальное разрешение (лицензия) на осуществление определенного вида деятельности, который подлежит лицензированию, – для заявителя, занимающегося предпринимательской деятельностью без образования юридического лица;</p>
+        </div>
+        <div class="paradadocporychitel">
+          <p style="color: red; font-size: 24px;"><b>ДЛЯ ПАРНЁРСКОЙ ПАРАДЫ (обычной)</b></p>
+          <p><b>Без поручителей!</b></p><br>
+          <p style="color: red; font-size: 24px;"><b>LADA</b></p>
+          <p>1) Паспорт (для граждан Республики Беларусь), вид на жительство (для иностранных граждан и лиц без гражданства, постоянно проживающих на территории Республики Беларусь);</p>
+          <p>2) Документы, подтверждающие получение дохода за последние 3 месяца:</p>
+            <p style="margin-left: 40px">Справка о доходах.</p>
+            <p style="margin-left: 40px">индивидуальные предприниматели предоставляют  справку о доходах индивидуального предпринимателя,  а также документы, подтверждающие уплату налогов за последние 3 месяца;</p>
+          <p>3) Документы, подтверждающие факт прохождения ранее, освобождения либо отсрочки от прохождения военной службы по призыву (военный билет, приписное свидетельство) — для заявителя мужского пола призывного возраста;</p>
+          <p>4) Свидетельство о регистрации в качестве индивидуального предпринимателя и специальное разрешение (лицензия) на осуществление определенного вида деятельности, который подлежит лицензированию, – для заявителя, занимающегося предпринимательской деятельностью без образования юридического лица;</p>
+          <p style="color: red; font-size: 24px;"><b>NISSAN</b></p>
+          <p>1) Паспорт (для граждан Республики Беларусь), вид на жительство (для иностранных граждан и лиц без гражданства, постоянно проживающих на территории Республики Беларусь);</p>
+          <p>2) Документы, подтверждающие получение дохода за последние 3 месяца:</p>
+            <p style="margin-left: 40px">Справка о доходах.</p>
+            <p style="margin-left: 40px">Индивидуальные предприниматели предоставляют  справку о доходах индивидуального предпринимателя,  а также документы, подтверждающие уплату налогов за последние 3 месяца;</p>
+          <p>3) Документы, подтверждающие факт прохождения ранее, освобождения либо отсрочки от прохождения военной службы по призыву (военный билет, приписное свидетельство) — для заявителя мужского пола призывного возраста;</p>
+          <p>4) Свидетельство о регистрации в качестве индивидуального предпринимателя и специальное разрешение (лицензия) на осуществление определенного вида деятельности, который подлежит лицензированию, – для заявителя, занимающегося предпринимательской деятельностью без образования юридического лица;</p>
+        </div>
+        <div class="paradaysldop">
+          <p>Дополнительные условия: </p>
+          <p style="color: red; font-size: 24px;"><b>ДЛЯ ПАРНЁРСКОЙ ПАРАДЫ (обычной)</b></p>
+          <p>Срок действия решения банка о предоставлении кредита составляет 30 дней с момента принятия решения. Подписание документов на получение кредита и заключение кредитного договора по данной программе кредитования осуществляется посредством системы дистанционного банковского обслуживания Интернет-банк 24 часа 7 дней в неделю.</p>
+          <p style="color: red; font-size: 24px;"><b>LADA</b></p>
+          <p>1) В случае приобретения автомобиля в СОАО «Минск-Лада» при передаче в залог приобретаемого за счет кредитных средств автомобиля – обязательное страхование автомобиля на условии полного АВТОКАСКО в течение первых 3 (трех) лет срока действия кредитного договора на сумму не менее чем остаток основного долга. Оформление страховых полисов производится в офисах (отделениях) ОАО «Банк БелВЭБ» ежегодно с уплатой страховых взносов единовременно или частями в несколько этапов;
+          <p>В иных случаях: при передаче в залог приобретаемого за счет кредитных средств автомобиля – обязательное страхование автомобиля на условии полного АВТОКАСКО в течение первых 3 (трех) лет срока действия кредитного договора на сумму не менее чем остаток основного долга. Оформление страховых полисов производится ежегодно с уплатой страховых взносов единовременно или частями в несколько этапов;</p>
+          <p>2) Дата ежемесячного возврата (погашения) основного долга и процентов за пользование кредитом устанавливается в соответствии с указаниями кредитополучателя</p>
+          <p style="color: red; font-size: 24px;"><b>NISSAN</b></p>
+          <p>Предоставление поручительства не менее одного физического лица обязательно:</p>
+          <p style="margin-left: 10px">1) Для заявителей – граждан Республики Беларусь, предоставивших сведения о доходе, полученном на территории Российской Федерации;</p>
+          <p style="margin-left: 10px">2) Для заявителей старше 58 лет для женщин и старше 63 лет для мужчин включительно на момент подачи заявления на получение кредита;</p>
+          <p style="margin-left: 10px">3) Для заявителей, осуществляющих предпринимательскую деятельность без образования юридического лица.</p>
+          <p>Отсрочка платежа:</p>
+          <p style="margin-left: 10px">Не применяется - для клиентов категории Классик, Престиж;</p>
+          <p style="margin-left: 10px">До 6 месяцев со дня предоставления кредита – для клиентов категории Премиум, VIP.</p>
+        </div>
+        <div class="paradayslblinger">
+          <p>Надо ещё придумать</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="terms" id="id_overdrdivshow">
+      <div class="name">
+        <p align="center">Овердрафт</p>
+      </div>
+      <a href="#">
+        <div class="back" id="id_backoverdr">
+          <p align="center">Вернуться</p>
+        </div>
+      </a>
+      <div class="yslmain">
+        <div class="overdrmenuysl">
+          <a href="#">
+            <div class="overdrmenuysl1" id="id_overdrmenugraf">
+              <p align="center">График погашения</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="overdrmenuysl1" id="id_overdrmenuyslza">
+              <p align="center">Условия для заявителя</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="overdrmenuysl2" id="id_overdrmenudocza">
+              <p align="center">Документы необходимые заявителю</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="overdrmenuysl1" id="id_overdrmenublinger">
+              <p align="center">Текст для блингера</p>
+            </div>
+          </a>
+          <a href="https://www.belveb.by/individual/kredity/overdraftnoe-kreditovanie/overdraft/" target="_blank">
+            <div class="overdrmenuysl2">
+              <p align="center">Общие условия (ссылка на сайт)</p>
+            </div>
+          </a>
+        </div>
+        <div class="overdrgraf">
+          <table id="tableoverdrras">
+            <tbody id="id_tableoverdrrasjs">
+
+            </tbody>
+          </table>
+        </div>
+        <div class="overdryslzayavitel">
+          <p>Физические лица – граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим условиям в совокупности:</p>
+          <p>1) возраст не менее 21 года и не более 68 лет на дату предоставления заявителем документов;</p>
+          <p>2) наличие Текущего счета;</p>
+          <p>3) регистрация на территории Республики Беларусь;</p>
+          <p>4) наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>5) постоянный источник дохода на территории Республики Беларусь.</p>
+          <p style="color: red;"><b>НЕЛЬЗЯ ДЛЯ ИП</b></p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ РАБОТАЮЩИХ НА ИП</b></p>
+          <p style="color: red;"><b>НЕЛЬЗЯ ПЕНСИОНЕРАМ</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ</b></p>
+        </div>
+        <div class="overdrdoczayavitel">
+          <p>Заявители предоставляют в Банк:</p>
+          <p>1) Паспорт (для граждан Республики Беларусь), вид на жительство (для иностранных граждан и лиц без гражданства, постоянно проживающих на территории Республики Беларусь);</p>
+          <p>2) Справку о доходах:</p>
+          <p style="margin-left: 40px">За последние 6 (шесть) месяцев – для заявителей, нанимателем которых является индивидуальный предприниматель;</p>
+          <p style="margin-left: 40px">За последние 3 (три) месяца – в остальных случаях.</p>
+          <p>3) Документы, подтверждающие факт прохождения ранее, освобождения либо отсрочки от прохождения военной службы по призыву (военный билет, приписное свидетельство) — для заявителя мужского пола призывного возраста;</p>
+        </div>
+        <div class="overdryslblinger">
+          <p>Надо ещё придумать</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="terms" id="id_overdrondivshow">
+      <div class="name">
+        <p>Овердрафт-onlaine</p>
+      </div>
+      <a href="#">
+        <div class="back" id="id_backoverdron">
+          <p align="center">Вернуться</p>
+        </div>
+      </a>
+      <div class="yslmain">
+        <div class="overdronmenuysl">
+          <a href="#">
+            <div class="overdronmenuysl1" id="id_overdronmenugraf">
+              <p align="center">График погашения</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="overdronmenuysl1" id="id_overdronmenuyslza">
+              <p align="center">Условия для заявителя</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="overdronmenuysl1" id="id_overdronmenublinger">
+              <p align="center">Текст для блингера</p>
+            </div>
+          </a>
+          <a href="https://www.belveb.by/individual/kredity/overdraftnoe-kreditovanie/Overdraft-online/" target="_blank">
+            <div class="overdronmenuysl2">
+              <p align="center">Общие условия (ссылка на сайт)</p>
+            </div>
+          </a>
+        </div>
+        <div class="overdrongraf">
+          <table id="tableoverdronras">
+            <tbody id="id_tableoverdronrasjs">
+
+            </tbody>
+          </table>
+        </div>
+        <div class="overdronyslzayavitel">
+          <p>Физические лица – граждане Республики Беларусь, иностранные граждане и лица без гражданства, отвечающие следующим условиям в совокупности:</p>
+          <p>1) возраст не менее 21 года и не более 68 лет на дату предоставления заявителем документов;</p>
+          <p>2) наличие Текущего зарплатного счета;</p>
+          <p>3) регистрация на территории Республики Беларусь;</p>
+          <p>4) наличие вида на жительство на территории Республики Беларусь (для иностранных граждан и лиц без гражданства);</p>
+          <p>5) постоянный источник дохода на территории Республики Беларусь.</p>
+          <p style="color: red;"><b>НЕЛЬЗЯ ДЛЯ ИП</b></p>
+          <p style="color: red;"><b>МОЖНО ДЛЯ РАБОТАЮЩИХ НА ИП</b></p>
+          <p style="color: red;"><b>НЕЛЬЗЯ ПЕНСИОНЕРАМ</b></p>
+          <p style="color: red;"><b>МОЖНО В ДЕКРЕТЕ</b></p>
+        </div>
+        <div class="overdronyslblinger">
+          <p>Надо ещё придумать</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

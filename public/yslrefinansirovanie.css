@@ -1,0 +1,381 @@
+
+
+
+
+
+
+
+
+
+.paradanaz
+{
+height: 60px;
+width: 806px;
+background-color: white;
+float: left;
+}
+.paradaknop
+{
+height: 60px;
+width: 94px;
+background-color: white;
+float: left;
+margin-left: 3px;
+}
+.paradamenuysl
+{
+height: 100%;
+width: 200px;
+float: left;
+}
+.paradamenuysl1
+{
+height: 60px;
+width: 200px;
+background-color: white;
+float: left;
+margin-bottom: 2px
+}
+.paradamenuysl2
+{
+height: 80px;
+width: 200px;
+background-color: white;
+float: left;
+margin-bottom: 2px
+}
+.paradayslobesp
+{
+height: 300px;
+width: 703px;
+float: left;
+margin-left: 3px;
+
+}
+#id_paradayslobesp2_1
+{
+  height: 60px;
+  width: 232px;
+  float: left;
+  background-color: white;
+}
+#id_paradayslobesp2_2
+{
+  height: 60px;
+  width: 231px;
+  float: left;
+  margin-left: 3px;
+  background-color: white;
+}
+#id_paradayslobesp2_3
+{
+  height: 60px;
+  width: 231px;
+  float: left;
+  margin-left: 3px;
+  background-color: white;
+}
+.paradayslobesp2_1
+{
+  width: 703px;
+  float: left;
+}
+.paradayslobesp2_1_1
+{
+  height: 100px;
+  width: 700px;
+  float: left;
+  background-color: white;
+  margin-top: 3px;
+}
+.paradayslobesp2_1_1o
+{
+  height: 450px;
+  width: 700px;
+  float: left;
+  background-color: white;
+  margin-top: 3px;
+}
+.paradayslobesp2_1_2
+{
+  height: 60px;
+  width: 700px;
+  float: left;
+  background-color: white;
+  margin-top: 3px;
+}
+.paradayslobesp2_1_2o
+{
+  height: 250px;
+  width: 700px;
+  float: left;
+  background-color: white;
+  margin-top: 3px;
+}
+.paradayslobesp2_2
+{
+  height: 740px;
+  width: 700px;
+  float: left;
+  background-color: white;
+  margin-top: 3px;
+  display: none;
+}
+.paradayslobesp2_3
+{
+  height: 650px;
+  width: 690px;
+  float: left;
+  background-color: white;
+  margin-top: 3px;
+  display: none;
+  padding-right: 10px;
+}
+.paradagraf
+{
+height: 50px;
+width: 700px;
+float: left;
+margin-left: 3px;
+display: none;
+}
+#id_tableparadarasjs
+{
+height: 100%;
+text-align: center;
+width: 100%;
+border-collapse: collapse;
+background-color: white;
+}
+.paradagrafras
+{
+height: 60px;
+width: 700px;
+float: left;
+background-color: white;
+margin-top: 3px;
+}
+.paradayslgraf
+{
+height: 140px;
+width: 700px;
+float: left;
+background-color: white;
+margin-bottom: 3px;
+padding-bottom: 10px;
+}
+.paradayslporychitel
+{
+width: 690px;
+background-color: white;
+float: left;
+margin-left: 3px;
+padding-left: 10px;
+display: none;
+}
+.paradayslzayavitel
+{
+width: 690px;
+background-color: white;
+float: left;
+margin-left: 3px;
+padding-left: 10px;
+display: none;
+}
+.paradadoczayavitel
+{
+width: 690px;
+background-color: white;
+float: left;
+margin-left: 3px;
+padding-left: 10px;
+display: none;
+}
+.paradadocporychitel
+{
+width: 690px;
+background-color: white;
+float: left;
+margin-left: 3px;
+padding-left: 10px;
+display: none;
+}
+.paradaysldop
+{
+width: 690px;
+background-color: white;
+float: left;
+margin-left: 3px;
+padding-left: 10px;
+display: none;
+}
+.paradayslblinger
+{
+width: 690px;
+background-color: white;
+float: left;
+margin-left: 3px;
+padding-left: 10px;
+display: none;
+}
+
+
+
+.overdrnaz
+{
+height: 60px;
+width: 806px;
+background-color: white;
+float: left;
+}
+.overdrknop
+{
+height: 60px;
+width: 94px;
+background-color: white;
+float: left;
+margin-left: 3px;
+}
+.overdrmenuysl
+{
+height: 100%;
+width: 200px;
+float: left;
+}
+.overdrmenuysl1
+{
+height: 60px;
+width: 200px;
+background-color: white;
+float: left;
+margin-bottom: 2px
+}
+.overdrmenuysl2
+{
+height: 80px;
+width: 200px;
+background-color: white;
+float: left;
+margin-bottom: 2px
+}
+.overdrgraf
+{
+height: 50px;
+width: 700px;
+float: left;
+margin-left: 3px;
+
+}
+#tableoverdrras
+{
+height: 100%;
+text-align: center;
+width: 100%;
+border-collapse: collapse;
+background-color: white;
+}
+.overdryslzayavitel
+{
+width: 690px;
+background-color: white;
+float: left;
+margin-left: 3px;
+padding-left: 10px;
+display: none;
+}
+.overdrdoczayavitel
+{
+width: 690px;
+background-color: white;
+float: left;
+margin-left: 3px;
+padding-left: 10px;
+display: none;
+}
+.overdryslblinger
+{
+width: 690px;
+background-color: white;
+float: left;
+margin-left: 3px;
+padding-left: 10px;
+display: none;
+}
+
+
+
+
+
+
+
+.overdronnaz
+{
+height: 60px;
+width: 806px;
+background-color: white;
+float: left;
+}
+.overdronknop
+{
+height: 60px;
+width: 94px;
+background-color: white;
+float: left;
+margin-left: 3px;
+}
+.overdronmenuysl
+{
+height: 100%;
+width: 200px;
+float: left;
+}
+.overdronmenuysl1
+{
+height: 60px;
+width: 200px;
+background-color: white;
+float: left;
+margin-bottom: 2px
+}
+.overdronmenuysl2
+{
+height: 80px;
+width: 200px;
+background-color: white;
+float: left;
+margin-bottom: 2px
+}
+.overdrongraf
+{
+height: 50px;
+width: 700px;
+float: left;
+margin-left: 3px;
+
+}
+#tableoverdronras
+{
+height: 100%;
+text-align: center;
+width: 100%;
+border-collapse: collapse;
+background-color: white;
+}
+.overdronyslzayavitel
+{
+width: 690px;
+background-color: white;
+float: left;
+margin-left: 3px;
+padding-left: 10px;
+display: none;
+}
+.overdronyslblinger
+{
+width: 690px;
+background-color: white;
+float: left;
+margin-left: 3px;
+padding-left: 10px;
+display: none;
+}

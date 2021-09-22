@@ -1,0 +1,99 @@
+table{
+  border-collapse: collapse;
+  background-color: white;
+}
+td{
+  border: 2px solid black;
+  font-size: 18px;
+  text-align: center;
+}
+.dysl{
+  width: 2%;
+}
+.d1{
+  background-color: #FD74E9;
+}
+.d2{
+  background-color: #F2D2FA;
+}
+.d3{
+  background-color: #4CFEC3;
+
+}
+.d4{
+  background-color: orange;
+}
+.dh1{
+  height: 5px;
+}
+.dh2{
+  height: 70px;
+}
+.di{
+  width: 21%;
+}
+.dit{
+  width: 3%;
+}
+.dyo{
+  width: 18%;
+}
+.dyot{
+  width: 3%;
+}
+.dyb{
+  width: 18%;
+}
+.dybt{
+  width: 3%;
+}
+.dp{
+  width: 15%;
+}
+.dpt{
+  width: 3%;
+}
+.ds{
+  width: 18%;
+}
+.dst{
+  width: 3%;
+}
+
+
+.depositytable{
+  height: 700px;
+  text-align: center;
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid black;
+  background-color: white;
+}
+.deposityconst{
+  margin-top: 10px;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  background-color: white;
+}
+.depositinput{
+  margin-top: 10px;
+  padding-top: 1px;
+  height: 65px;
+  width: 100%;
+  background-color: white;
+  display: none;
+}
+.depositinputdiv{
+  width: 500px;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tabledepitog{
+  text-align: center;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}

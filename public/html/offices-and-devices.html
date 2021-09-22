@@ -1,0 +1,1468 @@
+<html>
+
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <link rel="stylesheet" type="text/css" href="../css/offices-and-devices.css" >
+   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto:wght@500&family=Rufina&display=swap" rel="stylesheet">
+   <script src="../jquery.js"></script>
+   <script src="../log.js"></script>
+   <script src="../js/offices-and-devices.js"></script>
+   <script src="../js/offices-and-devices-mode.js"></script>
+  </head>
+
+  <body>
+      <div id="office-and-devices-menu">
+        <a href="#">
+          <div class="office-and-devices-switch" id="office-switch">
+            <p align="center">Офисы</p>
+          </div>
+        </a>
+        <div class="office-and-devices-switch" id="ATM-switch">
+          <p align="center">Банкоматы</p>
+        </div>
+        <a href="#">
+          <div class="office-and-devices-switch" id="infokiosk-switch">
+            <p align="center">Инфокиоски</p>
+          </div>
+        </a>
+      </div>
+      <div id="office">
+        <div id="office-region-menu">
+          <a href="#">
+            <div class="office-region-switch" id="office-all">
+              <p class="office-p1" align="center">Все</p>
+            </div>
+          <a href="#">
+            <div class="office-region-switch" id="office-minsk">
+              <p class="office-p1" align="center">Минск</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="office-region-switch" id="office-minsk-region">
+              <p class="office-p1" align="center">Минская область</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="office-region-switch" id="office-brest-region">
+              <p class="office-p2" align="center">Брестская область</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="office-region-switch" id="office-vitebsk-region">
+              <p class="office-p2" align="center">Витебская область</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="office-region-switch" id="office-gomel-region">
+              <p class="office-p2" align="center">Гомельская область</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="office-region-switch" id="office-grodno-region">
+              <p class="office-p2" align="center">Гродненская область</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="office-region-switch" id="office-mogilev-region">
+              <p class="office-p2" align="center">Могилёвская область</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="office-region-switch" id="office-map">
+              <p class="office-p1" align="center">На карте</p>
+            </div>
+          </a>
+        </div>
+        <div id="office-details-menu">
+          <div id="office-minsk-details">
+            <a href="#">
+              <div class="office-minsk-switch" id="office-details-all">
+                <p class="office-p1" align="center">Все</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-minsk-switch" id="office-details-saturday">
+                <p class="office-p2" align="center">Работают в субботу</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-minsk-switch" id="office-details-sunday">
+                <p class="office-p2" align="center">Работают в воскресенье</p>
+              </div>
+            </a>
+          </div>
+          <div id="office-minsk-region-details">
+            <a href="#">
+              <div class="office-minsk-region-switch" id="office-minsk-region-details-all">
+                <p align="center">Все</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-minsk-region-switch" id="office-minsk-region-details-molodechno">
+                <p align="center">Молодечно</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-minsk-region-switch" id="office-minsk-region-details-borisov">
+                <p align="center">Борисов</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-minsk-region-switch" id="office-minsk-region-details-soligorsk">
+                <p align="center">Солигорск</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-minsk-region-switch" id="office-minsk-region-details-zhodino">
+                <p align="center">Жодино</p>
+              </div>
+            </a>
+          </div>
+          <div id="office-brest-region-details">
+            <a href="#">
+              <div class="office-brest-region-switch" id="office-brest-region-details-all">
+                <p align="center">Все</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-brest-region-switch" id="office-brest-region-details-brest">
+                <p align="center">Брест</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-brest-region-switch" id="office-brest-region-details-baranovichi">
+                <p align="center">Барановичи</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-brest-region-switch" id="office-brest-region-details-kobrin">
+                <p align="center">Кобрин</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-brest-region-switch" id="office-brest-region-details-pinsk">
+                <p align="center">Пинск</p>
+              </div>
+            </a>
+          </div>
+          <div id="office-vitebsk-region-details">
+            <a href="#">
+              <div class="office-vitebsk-region-switch" id="office-vitebsk-region-details-all">
+                <p align="center">Все</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-vitebsk-region-switch" id="office-vitebsk-region-details-vitebsk">
+                <p align="center">Витебск</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-vitebsk-region-switch" id="office-vitebsk-region-details-polock">
+                <p align="center">Полоцк</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-vitebsk-region-switch" id="office-vitebsk-region-details-novopolock">
+                <p align="center">Новополоцк</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-vitebsk-region-switch" id="office-vitebsk-region-details-orsha">
+                <p align="center">Орша</p>
+              </div>
+            </a>
+          </div>
+          <div id="office-gomel-region-details">
+            <a href="#">
+              <div class="office-gomel-region-switch" id="office-gomel-region-details-all">
+                <p align="center">Все</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-gomel-region-switch" id="office-gomel-region-details-gomel">
+                <p align="center">Гомель</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-gomel-region-switch" id="office-gomel-region-details-mozir">
+                <p align="center">Мозырь</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-gomel-region-switch" id="office-gomel-region-details-rechica">
+                <p align="center">Речица</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-gomel-region-switch" id="office-gomel-region-details-zhlobin">
+                <p align="center">Жлобин</p>
+              </div>
+            </a>
+          </div>
+          <div id="office-grodno-region-details">
+            <a href="#">
+              <div class="office-grodno-region-switch" id="office-grodno-region-details-all">
+                <p align="center">Все</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-grodno-region-switch" id="office-grodno-region-details-grodno">
+                <p align="center">Гродно</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-grodno-region-switch" id="office-grodno-region-details-ostrovec">
+                <p align="center">Островец</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-grodno-region-switch" id="office-grodno-region-details-lida">
+                <p align="center">Лида</p>
+              </div>
+            </a>
+          </div>
+          <div id="office-mogilev-region-details">
+            <a href="#">
+              <div class="office-mogilev-region-switch" id="office-mogilev-region-details-all">
+                <p align="center">Все</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-mogilev-region-switch" id="office-mogilev-region-details-mogilev">
+                <p align="center">Могилёв</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="office-mogilev-region-switch" id="office-mogilev-region-details-bobryisk">
+                <p align="center">Бобруйск</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div id="office-mode">
+          <div class="office-mode-all office-mode-minsk" id="office-container-myasnikova32">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 710</p>
+            </div>
+            <div class="office-mode-address">
+              <p>ул. Мясникова 32<br><br>Индекс: 220030</p>
+            </div>
+            <div class="office-mode-district">
+              <p>Московский  район<br><br>Белгосмузтеатр, сендайский сквер, за Красным костёлом</p>
+            </div>
+            <div class="office-mode-individuals" id="office-myasnikova32">
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-minsk" id="office-container-moskovskaya13">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 760<br><br>
+              <span style="color: red"> Перемещение по адресу:<br>ул. Авакяна, 19<br>до 31.08.2020</span></p>
+            </div>
+            <div class="office-mode-address">
+              <p>ул. Московская 13<br><br>Индекс: 220007</p>
+            </div>
+            <div class="office-mode-district">
+              <p>Октябрьский район<br><br>ст. м. Институт Культуры</p>
+            </div>
+            <div class="office-mode-individuals" id="office-moskovskaya13">
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br>ЭЛЕКТРОННЫЙ КАССИР:<br><b>пн-чт.:</b> 9:00-17:00<br><b>пт.:</b> 9:00-15:45<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-minsk" id="office-container-zaslavskaya10">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 700</p>
+            </div>
+            <div class="office-mode-address">
+              <p>ул. Заславская 10<br><br>Индекс: 220004</p>
+            </div>
+            <div class="office-mode-district">
+              <p>Центральный район<br><br>пер. Мельникайте, гостиница Юбилейная, вход со стороны ул. Заславская, 2-3 этаж</p>
+            </div>
+            <div class="office-mode-individuals" id="office-zaslavskaya10">
+              <p><b><span style="color: red">Розница:</span><br>пн.-чт.:</b> 9:00 - 19:00<br><b>пт:</b> 9:00 - 18:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">Касса:</span><br>пн.-чт.:</b> 9:00 - 19:00<br><b>пт:</b> 9:00 - 18:00<br><b>вых.:</b> сб., вс., праздн. д. <br><b>предпраздн. дни:</b> сокращён на 1 час</p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br>АВТОМАТИЧЕСКАЯ ДЕПОЗИТНАЯ МАШИНА<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-minsk office-mode-saturday" id="office-container-pritickogo93">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 715</p>
+            </div>
+            <div class="office-mode-address">
+              <p>ул. Притыцкого 93</p>
+            </div>
+            <div class="office-mode-district">
+              <p>Фрунзенский район<br><br>пер. Мельникайте, гостиница Юбилейная, вход со стороны ул. Заславская, 2-3 этаж</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 10:30 - 19:30<br><b>сб:</b> 11:00 - 19:00<br><b>вых.:</b>вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Работает с валютами:<br> BYN | USD | EUR | RUB<br><br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: red">Нельзя заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-minsk" id="office-container-pritickogo23a">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 725</p>
+            </div>
+            <div class="office-mode-address">
+              <p>ул. Притыцкого 23а</p>
+            </div>
+            <div class="office-mode-district">
+              <p>Фрунзенский район<br><br>Орбита центр, магазин Хит, на 1 этаже</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 9:00 - 19:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Работает с валютами:<br> BYN | USD | EUR | RUB<br><br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: red">Нельзя заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-minsk" id="office-container-pobediteley100">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 720<br><br>
+              <span style="color: red">Перемещение по адресу:<br>пр. Победителей 115<br>В августе</span></p>
+            </div>
+            <div class="office-mode-address">
+              <p>пр. Победителей 100<br><br>Индекс: 220020</p>
+            </div>
+            <div class="office-mode-district">
+              <p>Центральный район<br><br>Минск-Арена, бизнес центр "Покровский"</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-чт.:</b> 9:00-17:00<br><b>пт.:</b> 9:00-16:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Работает с валютами:<br> BYN | USD | EUR | RUB<br><br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: red">Нельзя заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-minsk" id="office-container-kylman3">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 770</p>
+            </div>
+            <div class="office-mode-address">
+              <p>ул. Кульман 3</p>
+            </div>
+            <div class="office-mode-district">
+              <p>Советский район<br><br>Комаровский рынок, в ТЦ COOLMAN, вход правее центрального входа в ТЦ, на втором этаже</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-чт.:</b> 10:00-18:00<br><b>пт:</b> 10:00-17:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">Касса:</span><br>пн.-чт.:</b> 10:00-18:00<br><b>обед:</b> 14:30-15:15 <b>тех. пер.:</b> 12:10-12:20, 16:50-17:00, <br><b>пт:</b> 10:00-17:00<br><b>обед:</b> 14:30-15:15 <b>тех. пер.:</b> 12:10-12:20,<br><b>вых.:</b> сб., вс., праздн. д. <br><b>предпраздн. дни:</b> сокращён на 1 час</p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-minsk" id="office-container-tolbyhina2">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 740</p>
+            </div>
+            <div class="office-mode-address">
+              <p>ул. Толбухина 2<br><br>Индекс: 220043</p>
+            </div>
+            <div class="office-mode-district">
+              <p>Первомайский район<br><br>ст. м. Парк Челюскинцев, ТЦ "Тайм" 1 этаж </p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-чт.:</b> 10:00-18:00<br><b>пт:</b> 10:00-17:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Работает с валютами:<br> BYN | USD | EUR | RUB<br><br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: red">Нельзя заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-minsk" id="office-container-asanalieva23">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 730</p>
+            </div>
+            <div class="office-mode-address">
+              <p>пер. Асаналиева 2-3<br><br>Индекс: 220024</p>
+            </div>
+            <div class="office-mode-district">
+              <p>Октябрьский район<br><br>Автоваза, за больницей, напротив автосалона "Минск-Лада", 1 этаж - кассы, 2 этаж - 211 каб</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-чт.:</b> 09:00-17:00<br><b>пт:</b> 09:00-16:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">Касса:</span><br>пн.-чт.:</b> 09:00-17:00<br><b>обед:</b> (вт., ср., чт.): 14.00 – 14.45 с 20 по 25 число каждого месяца без тех. перерывов и обеда <br><b>пт:</b> 09:00-16:00<br><b>вых.:</b> сб., вс., праздн. д. <br><b>предпраздн. дни:</b> сокращён на 1 час</p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-minsk" id="office-container-yakybova10">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 780<br><span style="color: red">будет премещен пр.Рокоссовского 80</span></p>
+            </div>
+            <div class="office-mode-address">
+              <p>ул. Якубова 10<br><br>Индекс: 220101</p>
+            </div>
+            <div class="office-mode-district">
+              <p>Ленинский район<br><br>остановка Серебрянка- 3, рядом универсам "Невель", опер. зал - 2 этаж</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 10:00-18:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">Касса:</span><br>пн.-пт.:</b> 10:00-18:00<br><b>обед:</b> 14.15–14.45 <b>тех. пер.:</b> 12:00-12:15, 16:40-16:50<br><b>вых.:</b> сб., вс., праздн. д. <br><b>предпраздн. дни:</b> сокращён на 1 час</p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-minsk" id="office-container-dzerzhinskogo91">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 790</p>
+            </div>
+            <div class="office-mode-address">
+              <p>пр. Дзержинского 91</p>
+            </div>
+            <div class="office-mode-district">
+              <p>Московский район<br><br>Юго-Запад, ст.м.Петровщина, Комплекс "Алми" по правой стороне за аптекой напротив касс, отличная стоянка</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 10:30-19:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">Касса:</span><br>пн.-пт.:</b> 10:30-19:00<br><b>обед:</b> 14:15-15:00 <b>тех. пер.:</b> 12:00-12:15,17:00-17:15<br><b>вых.:</b> сб., вс., праздн. д. <br><b>предпраздн. дни:</b> сокращён на 1 час</p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br>АВТОМАТИЧЕСКАЯ ДЕПОЗИТНАЯ МАШИНА<br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-minsk" id="office-container-babyshkina39">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 730</p>
+            </div>
+            <div class="office-mode-address">
+              <p>ул. Бабушкина 39<br><br>Индекс: 220024</p>
+            </div>
+            <div class="office-mode-district">
+              <p>Колядичи<br><br>Рядом находится склад</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-чт.:</b> 08:30-17:00<br><b>пт.:</b> 8:30-15:45<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">Касса:</span><br>пн.-чт.:</b> 08:30-17:00<br><b>обед:</b> 13:00-13:45<br><b>пт.:</b> 08.30-15.45<br><b>обед:</b> 13:00-13:45<br><b>вых.:</b> сб., вс., праздн. д. <br><b>предпраздн. дни:</b> сокращён на 1 час</p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-minsk office-mode-saturday" id="office-container-partizanskiy150a">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 750 <br><br>раньше молодёжная 2а</p>
+            </div>
+            <div class="office-mode-address">
+              <p>пр. Партизанский 150а<br><br>Индекс: 223060</p>
+            </div>
+            <div class="office-mode-district">
+              <p>Автозаводской район<br><br>ТЦ "МОМО"/ ст.м. Могилевская</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 10:00-19:00<br><b>сб.:</b> 10:00-16:00<br><b>обед:</b> 13:00-13:30<br><b>вых.:</b> вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Работает с валютами:<br> BYN | USD | EUR | RUB<br><br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: red">Нельзя заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-minsk-region" id="office-container-velikigostinec143b">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 530</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Молодечно</b><br><br>ул. Великий Гостинец 143б</p>
+            </div>
+            <div class="office-mode-district">
+              <p>рядом ТЦ "Модуль", магазин "Твоё", рядом ресторан "Европа", пожарная часть (вывеска "Служба спасения"), фабрика "Березка"</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 09:00-17:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Работает с валютами:<br> BYN | USD | EUR | RUB<br><br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-minsk-region" id="office-container-gagarina46a">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 510</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Борисов</b><br><br>ул.Гагарина 46а<br><br>Индекс: 222120</p>
+            </div>
+            <div class="office-mode-district">
+              <p>рядом стадион, магазин "Евроопт"</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 09:30-17:30<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">Касса:</span><br>пн.-пт.:</b> 09:30-17:30<br><b>вых.:</b> сб., вс., праздн. д. <br><b>предпраздн. дни:</b> сокращён на 1 час</p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-minsk-region" id="office-container-lenina20">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 540</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Солигорск</b><br><br>ул. Ленина 20</p>
+            </div>
+            <div class="office-mode-district">
+              <p>в магазине "Green", напротив ж/д вокзала</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 10:00-18:00<br><b>обед:</b> 14:00-15:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">Касса:</span><br>пн.-пт.:</b> 10:00-18:00<br><b>обед: </b>14:00-15:00<b> тех. пер.:</b> 11:45-12:00, 16:45-17:00<br><b>вых.:</b> сб., вс., праздн. д. <br><b>предпраздн. дни:</b> сокращён на 1 час</p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-minsk-region" id="office-container-lenina212">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 520</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Жодино</b><br><br>пр-т Ленина 21-2</p>
+            </div>
+            <div class="office-mode-district">
+              <p>в здании дома быта, возле "Жодинского торгового центра", есть парковка</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 09:30-17:30<br><b>обед:</b> 13:00-14:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-brest-region" id="office-container-lenina42">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 100</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Брест</b><br><br>ул. Ленина 42<br><br>Индекс: 224030</p>
+            </div>
+            <div class="office-mode-district">
+              <p>рядом остановка "Сквер Иконникова", Поликлиника №1, общежитие Педуниверситета</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 09:00-19:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">Касса:</span><br>пн.-пт.:</b> 09:00-19:00<br><b>вых.:</b> сб., вс., праздн. д. <br><b>предпраздн. дни:</b> сокращён на 1 час</p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-brest-region" id="office-container-sovetskaya82">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 110</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Барановичи</b><br><br>ул. Советская 82<br><br>Индекс: 225320</p>
+            </div>
+            <div class="office-mode-district">
+              <p>здание гостиницы "Горизонт", боковой вход со стороны улицы Комсомольская</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 09:00-18:30<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Работает с валютами:<br> BYN | USD | EUR | RUB<br><br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-brest-region" id="office-container-dzerzhinskogo61">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 120</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Кобрин</b><br><br>ул. Дзержинского 61<br><br>Индекс: 225306</p>
+            </div>
+            <div class="office-mode-district">
+              <p>рядом ТЦ "Алиса", ТЦ "Крок"</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-чт.:</b> 08:30-18:00<br><b>пт.: </b>8:30-17:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">Касса:</span><br>пн.-чт.:</b> 08:30-18:00<br><b>пт.: </b>8:30-17:00<br><b>вых.:</b> сб., вс., праздн. д. <br><b>предпраздн. дни:</b> сокращён на 1 час</p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-brest-region" id="office-container-pervomayskaya40">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 130</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Пинск</b><br><br>ул. Первомайская 40</p>
+            </div>
+            <div class="office-mode-district">
+              <p>за зданием Национального Банка, магазин Калинка - потом офис</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 09:00-17:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Работает с валютами:<br> BYN | USD | EUR | RUB<br><br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-vitebsk-region" id="office-container-kirova637">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 200</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Витебск</b><br><br>ул. Кирова 6-37</p>
+            </div>
+            <div class="office-mode-district">
+              <p>магазин книги</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 09:00-19:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">Касса:</span><br>пн.-пт.:</b> 11:00-19:00<br><b>обед: </b>15:00-16:00<br><b>вых.:</b> сб., вс., праздн. д. <br><b>предпраздн. дни:</b> сокращён на 1 час</p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br>ЭЛЕКТРОННЫЙ КАССИР<br>ТЕМПОКАССА<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-vitebsk-region" id="office-container-skorini23">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 230</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Полоцк</b><br><br>пр. Ф. Скорины 23<br><br>Индекс: 211400</p>
+            </div>
+            <div class="office-mode-district">
+              <p>в здании жилого дома, в парке, рядом магазин "Турист"</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 10:00-18:00<br><b>обед:</b> 13:30-14:15<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Работает с валютами:<br> BYN | USD | EUR | RUB<br><br>ЭЛЕКТРОННЫЙ КАССИР<br>СОРБУ №1 и №2 оснащены темпокассой<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-vitebsk-region" id="office-container-molodezhnaya10397">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 210</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Новополоцк</b><br><br>ул. Молодежная 103-97<br><br>Индекс: 211501</p>
+            </div>
+            <div class="office-mode-district">
+              <p></p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 10:00-18:00<br><b>обед:</b> 14:00-15:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Работает с валютами:<br> BYN | USD | EUR | RUB<br><br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-vitebsk-region" id="office-container-mira411">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 220</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Орша</b><br><br>ул. Мира 4-11<br><br>Индекс: 211392</p>
+            </div>
+            <div class="office-mode-district">
+              <p>Рядом магазин "Форум"</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 09:00-18:00<br><b>сб.:</b> 09:00-16:00<br><b>вых.:</b>вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Работает с валютами:<br> BYN | USD | EUR | RUB<br><br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-gomel-region" id="office-container-sovetskaya71">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 300</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Гомель</b><br><br>ул. Советская 71</p>
+            </div>
+            <div class="office-mode-district">
+              <p></p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 09:00-19:00<br><b>вых.:</b> сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">Касса:</span><br>пн.-пт.:</b> 09:00-19:00<br><b>тех. пер.: </b>11:45-12:00, 15:30-15:45<br><b>вых.:</b> сб., вс., праздн. д. <br><b>предпраздн. дни:</b> сокращён на 1 час</p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-gomel-region" id="office-container-saeta4">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 320</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Мозырь</b><br><br>ул. Саета 4<br><br>Индекс: 247760</p>
+            </div>
+            <div class="office-mode-district">
+              <p>Рядом магазин "Форум"</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 10:00-17:30<br><b>Обед:</b> 14:00-15:00<br><b>вых.:</b>сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br><br>ЭЛЕКТРОННЫЙ КАССИР<br>ТЕМПОКАССА<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-gomel-region" id="office-container-sovetskaya93">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 330</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Речица</b><br><br>ул. Советская 93</p>
+            </div>
+            <div class="office-mode-district">
+              <p>Рядом центральная аптека</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 09:00-17:30<br><b>вых.:</b>сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Работает с валютами:<br> BYN | USD | EUR | RUB<br><br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-gomel-region" id="office-container-pervomayskaya52">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 310</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Жлобин</b><br><br>ул. Первомайская 52</p>
+            </div>
+            <div class="office-mode-district">
+              <p>магазин Мегатоп, мед. центр "Семья и здоровье"</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 09:00-18:00<br><b>вых.:</b>сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Работает с валютами:<br> BYN | USD | EUR | RUB<br><br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-grodno-region" id="office-container-kaluchinskaya21">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 400</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Гродно</b><br><br>ул. Калючинская 21<br><br>Индекс: 230023</p>
+            </div>
+            <div class="office-mode-district">
+              <p>возле тюрьмы, в ТЦ "Палац"</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-чт.:</b> 09:00-19:00<br><b>пт.:</b> 09:00-18:00<br><b>сб.: </b>9:30-15:00 <b>обед: </b> 11:30-12:00<b><br>вых.:</b> вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">Кассы:</span><br>пн.-чт.:</b> 09:00-19:00 <b>обед: </b>14:15-15:00<br><b>пт.: </b>9:00-18:00 <b>обед: </b>14:15-15:00<br><b>вых.: </b>сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час</p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-grodno-region" id="office-container-volodarskogo59a">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 430</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Островец</b><br><br>ул. Володарского 59а</p>
+            </div>
+            <div class="office-mode-district">
+              <p>рядом Белмаркет, ТЦ "Залей"</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 09:00-18:00<br><b>сб.: </b>9:00-15:00 <br><b>вых.: </b>сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Работает с валютами:<br> BYN | USD | EUR | RUB<br><br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-grodno-region" id="office-container-kirova8">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 420</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Лида</b><br><br>ул. Кирова 8</p>
+            </div>
+            <div class="office-mode-district">
+              <p>бывший ресторан "Континент", гостиничный центр "Экватор"</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 09:00-18:30<br><b>вых.: </b>сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Работает с валютами:<br> BYN | USD | EUR | RUB<br><br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-mogilev-region" id="office-container-dzerzhinskogo7a">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 600</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Могилёв</b><br><br>ул. Дзержинского 7а</p>
+            </div>
+            <div class="office-mode-district">
+              <p>за горисполкомом</p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 09:00-18:30<br><b>вых.: </b>сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">Кассы: </span><br>пн.-пт.:</b> 09:00-18:30<br><b>вых.: </b>сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час</p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Цветная валюта<br>Инкассо<br><br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту</span></p>
+            </div>
+          </div>
+          <div class="office-mode-all office-mode-mogilev-region" id="office-container-socialisticheskaya12353">
+            <div class="office-mode-number">
+              <p>Сервисный офис<br> № 610</p>
+            </div>
+            <div class="office-mode-address">
+              <p><b>Бобруйск</b><br><br>ул. Социалистическая 123-53</p>
+            </div>
+            <div class="office-mode-district">
+              <p></p>
+            </div>
+            <div class="office-mode-individuals">
+              <p><b><span style="color: red">Розница:</span><br>пн.-пт.:</b> 09:00-17:00<br><b>вых.: </b>сб., вс., праздн. д.<br><b>предпраздн. дни:</b> сокращён на 1 час<br>
+              <b><span style="color: red">КАСС НЕТ</span></b></p>
+            </div>
+            <div class="office-mode-сurrency">
+              <p>Работает с валютами:<br> BYN | USD | EUR | RUB<br><br>ЭЛЕКТРОННЫЙ КАССИР<br><span style="color: #00C322">Можно заказать валюту:<br><b>До 2000 BYN USD EUR</b></span></p>
+            </div>
+          </div>
+          <iframe id="map-office" src="office.html"></iframe>
+
+        </div>
+
+      </div>
+
+      <div id="ATM">
+      </div>
+
+      <div id="infokiosk">
+        <div id="infokiosk-switch-menu">
+          <a href="#">
+            <div id="infokiosk-switch-all" class="infokiosk-switch">
+              <p>Все</p>
+            </div>
+          </a>
+          <a href="#">
+            <div id="infokiosk-switch-24" class="infokiosk-switch">
+              <p>24 часа</p>
+            </div>
+          </a>
+          <a href="#">
+            <div id="infokiosk-switch-minsk" class="infokiosk-switch">
+              <p>Минск</p>
+            </div>
+          </a>
+          <a href="#">
+            <div id="infokiosk-switch-map" class="infokiosk-switch">
+              <p>Карта</p>
+            </div>
+          </a>
+        </div>
+
+
+
+
+
+
+
+
+        <div id="infokiosk-address">
+
+
+
+
+
+
+
+
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150027</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>МИНСК<br>Мясникова 32</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>9:00 - 18:30 (пн. - чт.)<br>9:00 - 17:30 (пт.)<br>в предпр. дни сокр. на час</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>ОАО "Банк БелВЭБ"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>	BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150024</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>МИНСК<br>Притыцкого 93</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>10:30 - 19:00</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>Супермаркет "Алми"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>BelVEB</p>
+            </div>
+            </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150005</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Якубова 10</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	10:00 - 18:00 (пн. - пт.)<br> 10:00 - 17:00 (предпр. дни)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Банк БелВЭБ"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>	BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 11050001</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Победителей 23/1</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:00 - 19:00 (пн. - пт.) <br>10:00 - 15:00 (сб.)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ЦБУ №9 ЗАО "РРБ-Банк"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>	RRB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk infokiosk-address-24">
+            <div class="infokiosk-id">
+              <p>ID 00150014</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>МИНСК<br>Победителей 100</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>24 часа</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Банк БелВЭБ"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150013</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Победителей 100</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:00 - 16:30 (пн. - чт.)<br> 9:00 - 15:15<br> (пт., предпр. дни)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Банк БелВЭБ"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>		BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150016</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Дзержинского 91</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:40 - 19:15</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Банк БелВЭБ"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>		BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150030</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Партизанский 150а</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	10:00 - 22:00 (пн. - пт.)<br> 10:00 - 21:00 (сб., вс.)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ТЦ "МОМО"	</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>	BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150018</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Старовиленская 87</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	8:00 - 20:00 (пн. - пт.)<br> 9:00 - 17:00 (сб.)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	РУП "Белтелеком"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>		BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150003</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>	МИНСК<br>	Мясникова 32</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:00 - 18:30 (пн. - чт.)<br> 9:00 - 17:30 (пт.)<br> в предпр. дни сокр.</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Банк БелВЭБ"	</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>	BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 18250002</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Логойский тракт 37</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:00 - 23:00</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	Супермаркет "BIGZZ"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>		Technobank</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150021</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Есенина 68</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	8:00 - 20:00 (пн. - пт.)<br> 9:00 - 17:00 (сб.)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	РУП "Белтелеком"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>		BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 18250003</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Кропоткина 44</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:00 - 19:00 (пн. - пт.)<br> 9:00 - 16:00 (сб.)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Технобанк"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>		Technobank</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150031</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК	Скрыганова 6</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:00 - 18:00 (пн. - пт.)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Банк БелВЭБ"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>	BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 18250001</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Логойский тракт - МКАД</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:00 - 23:00</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	Гипермаркет "BIGZZ"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>		Technobank</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150026</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Заславская 10</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:00 - 19:00 (пн. - чт.)<br> 9:00 - 18:00 (пт.)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Банк БелВЭБ"	</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>	BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150002</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Мавра 41</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	8:00 - 20:00 (пн. - пт.)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	БЦ "Изоком Плаза"	</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>	BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150025</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Победителей 29</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:30 - 18:00 (пн. - чт.)<br> 9:30 - 17:00 (пт.)<br> в предпр. дни сокр.</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Банк БелВЭБ"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>		BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150010</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Кульман 3</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:00 - 16:30 (пн. - чт.)<br> 9:00 - 15:15 (пт.)<br> 9:30 - 17:00 (сб.)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Банк БелВЭБ"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>		BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150007</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Толбухина 2</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:00 - 18:00</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Банк БелВЭБ"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>	BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk infokiosk-address-24">
+            <div class="infokiosk-id">
+              <p>ID 00150001</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Заславская 10</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	24 часа</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Банк БелВЭБ"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>		BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150028</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>МИНСК<br>Большое Стиклево, Фабричная 16а</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:00 - 18:00 (пн. - пт.)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	Офисное здание</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>	BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150006</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК	Асаналиева переулок 2/3</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:00 - 17:00 (пн. - чт.)<br> 9:00 - 16:00 (пт., предпр. дни)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Банк БелВЭБ"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>		BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150023</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>МИНСК	Независимости 3/2</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	10:00 - 22:00</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ТЦ "Столица"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>		BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 18250004</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Победителей 65</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:00 - 2:00</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Технобанк"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>	Technobank</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150029</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Победителей 20/1</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	7:00 - 23:00 (пн. - пт.)<br> 9:00 - 22:00 (сб., вс.)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	Спортивно - оздоровительный комплекс "Мир фитнеса"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>		BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150019</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Гебелева 7</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	8:00 - 20:00 (пн. - пт.)<br> 9:00 - 17:00 (сб.)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	РУП "Белтелеком"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>		BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150012</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Скрыганова 6</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:00 - 18:00 (пн. - пт.)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Банк БелВЭБ"	</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>	BelVEB</p>
+            </div>
+          </div>
+
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150008</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК	<br>Московская 13</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:00 - 18:30 (пн. - чт.)<br> 9:00 - 17:30 (пт.)<br> 9:00-17:00 (сб.)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p> в	ОАО "Банк БелВЭБ"	</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>	BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150015</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Бабушкина 39</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	8:30 - 18:00 (пн. - чт.)<br> 8:30 - 16:45 (пт., предпр. дни)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Банк БелВЭБ"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>	BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150032</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Ваупшасова 4-4</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	8:00 - 20:00</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	Заводоуправление ОАО"УКХ"Минский Моторный Завод"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>		BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150004</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Мясникова 32</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	9:00 - 18:30 (пн. - чт.)<br> 9:00 - 17:30 (пт.)<br> в предпр. дни сокр.</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	ОАО "Банк БелВЭБ"	</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>	BelVEB</p>
+            </div>
+          </div>
+          <div class="infokiosk-address-all infokiosk-address-minsk">
+            <div class="infokiosk-id">
+              <p>ID 00150020</p>
+            </div>
+            <div class="infokiosk-address">
+              <p>		МИНСК<br>	Матусевича 13</p>
+            </div>
+            <div class="infokiosk-mode">
+              <p>	8:00 - 20:00 (пн. - пт.)<br> 9:00 - 17:00 (сб.)</p>
+            </div>
+            <div class="infokiosk-place">
+              <p>	РУП "Белтелеком"</p>
+            </div>
+            <div class="infokiosk-main">
+              <p>		BelVEB</p>
+            </div>
+          </div>
+        </div>
+        <iframe id="map-infokiosk" src="infokiosk.html"></iframe>
+      </div>
+  </body>
+</html>

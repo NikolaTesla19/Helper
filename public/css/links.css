@@ -1,0 +1,20 @@
+a{
+  text-decoration: none;
+  color: black;
+}
+.link-block{
+  background-color: white;
+  border-radius: 3px;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+pre{
+  text-align: center;
+  font-size: 18px;
+  font-weight: 800;
+}
+p{
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+}

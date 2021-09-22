@@ -1,0 +1,358 @@
+
+#map-office{
+  height: 115%;
+  width: 1570px;
+  float: left;
+  display: none;
+  border: none;
+}
+#map-infokiosk{
+  display: none;
+  height: 80%;
+  width: 1570px;
+  float: left;
+  border: none;
+}
+#office-mode{
+  height: 70%;
+}
+#office-region-menu{
+  height: 80px;
+}
+#office-and-devices{
+  width: 100%;
+  float: left;
+  display: none;
+}
+.office-and-devices-switch{
+  width: 300px;
+  height: 50px;
+  background-color: white;
+  float: left;
+  margin-right: 5px;
+  border-radius: 7px;
+}
+        .office-and-devices-switch > p{
+          margin-top: 5px;
+          font-size: 30px;
+        }
+        #office-switch{
+          background-color: #C9C9C9;
+        }
+#office{
+  float: left;
+  width: 1800px;
+}
+.office-region-switch{
+  width: 150px;
+  padding: 0 10px 0 10px;
+  height: 60px;
+  margin-top: 15px;
+  margin-right: 5px;
+  float: left;
+  background-color: white;
+  border-radius: 7px;
+}
+        .office-region-switch > p.office-p1{
+          margin-top: 17px;
+          font-size: 20px;
+        }
+        .office-region-switch > p.office-p2{
+          margin-top: 5px;
+          font-size: 20px;
+        }
+        #office-all{
+          background-color: #C9C9C9;
+        }
+#office-details-menu{
+  overflow: hidden;
+  float: left;
+}
+#office-minsk-details{
+  height: 80px;
+  display: none;
+}
+.office-minsk-switch{
+  width: 150px;
+  padding: 0 10px 0 10px;
+  height: 60px;
+  margin-top: 15px;
+  margin-right: 5px;
+  float: left;
+  background-color: white;
+  border-radius: 7px;
+}
+        .office-minsk-switch > p.office-p1{
+          margin-top: 17px;
+          font-size: 20px;
+        }
+        .office-minsk-switch > p.office-p2{
+          margin-top: 5px;
+          font-size: 20px;
+        }
+        #office-details-all{
+          background-color: #C9C9C9;
+        }
+#office-minsk-region-details{
+  display: none;
+}
+.office-minsk-region-switch{
+  width: 150px;
+  padding: 0 10px 0 10px;
+  height: 60px;
+  margin-top: 15px;
+  margin-right: 5px;
+  float: left;
+  background-color: white;
+  border-radius: 7px;
+}
+        #office-minsk-region-details-all{
+          background-color: #C9C9C9;
+        }
+        .office-minsk-region-switch > p{
+          margin-top: 17px;
+          font-size: 20px;
+        }
+#office-brest-region-details{
+  display: none;
+}
+.office-brest-region-switch{
+  width: 150px;
+  padding: 0 10px 0 10px;
+  height: 60px;
+  margin-top: 15px;
+  margin-right: 5px;
+  float: left;
+  background-color: white;
+  border-radius: 7px;
+}
+        #office-brest-region-details-all{
+          background-color: #C9C9C9;
+        }
+        .office-brest-region-switch > p{
+          margin-top: 17px;
+          font-size: 20px;
+        }
+#office-vitebsk-region-details{
+  display: none;
+}
+.office-vitebsk-region-switch{
+  width: 150px;
+  padding: 0 10px 0 10px;
+  height: 60px;
+  margin-top: 15px;
+  margin-right: 5px;
+  float: left;
+  background-color: white;
+  border-radius: 7px;
+}
+        #office-vitebsk-region-details-all{
+          background-color: #C9C9C9;
+        }
+        .office-vitebsk-region-switch > p{
+          margin-top: 17px;
+          font-size: 20px;
+        }
+#office-gomel-region-details{
+display: none;
+}
+.office-gomel-region-switch{
+  width: 150px;
+  padding: 0 10px 0 10px;
+  height: 60px;
+  margin-top: 15px;
+  margin-right: 5px;
+  float: left;
+  background-color: white;
+  border-radius: 7px;
+}
+        .office-gomel-region-switch > p{
+          margin-top: 17px;
+          font-size: 20px;
+        }
+        #office-gomel-region-details-all{
+          background-color: #C9C9C9;
+        }
+#office-grodno-region-details{
+  display: none;
+}
+.office-grodno-region-switch{
+  width: 150px;
+  padding: 0 10px 0 10px;
+  height: 60px;
+  margin-top: 15px;
+  margin-right: 5px;
+  float: left;
+  background-color: white;
+  border-radius: 7px;
+}
+        .office-grodno-region-switch > p{
+          margin-top: 17px;
+          font-size: 20px;
+        }
+        #office-grodno-region-details-all{
+          background-color: #C9C9C9;
+        }
+#office-mogilev-region-details{
+display: none;
+}
+.office-mogilev-region-switch{
+  width: 150px;
+  padding: 0 10px 0 10px;
+  height: 60px;
+  margin-top: 15px;
+  margin-right: 5px;
+  float: left;
+  background-color: white;
+  border-radius: 7px;
+}
+        .office-mogilev-region-switch > p{
+          margin-top: 17px;
+          font-size: 20px;
+        }
+        #office-mogilev-region-details-all{
+          background-color: #C9C9C9;
+        }
+.office-mode-all{
+  width: 1410px;
+  height: 270px;
+  background-color: white;
+  margin-top: 15px;
+  float: left;
+  border-radius: 7px;
+}
+#office-mode{
+
+}
+.office-mode-number{
+  width: 200px;
+  height: 270px;
+  position: relative;
+  float: left;
+  border-right: 2px solid black;
+  text-align: center;
+}
+.office-mode-address{
+  width: 200px;
+  height: 270px;
+  float: left;
+  position: relative;
+  border-right: 2px solid black;
+  text-align: center;
+}
+.office-mode-district{
+  width: 200px;
+  height: 270px;
+  float: left;
+  position: relative;
+  border-right: 2px solid black;
+  text-align: center;
+}
+.office-mode-individuals{
+  padding-left: 10px;
+  width: 550px;
+  height: 270px;
+  float: left;
+  position: relative;
+  border-right: 2px solid black;
+}
+.office-mode-сurrency{
+  width: 240px;
+  height: 270px;
+  float: left;
+  position: relative;
+  text-align: center;
+}
+.office-mode-all > div > p{
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+
+}
+
+
+#infokiosk{
+  float: left;
+  display: none;
+}
+#infokiosk-switch-menu{
+  height: 80px;
+  width: 1500px;
+}
+.infokiosk-switch {
+  width: 150px;
+  padding: 0 10px 0 10px;
+  height: 60px;
+  margin-top: 15px;
+  margin-right: 5px;
+  float: left;
+  background-color: white;
+  border-radius: 7px;
+}
+.infokiosk-switch > p{
+  margin-top: 17px;
+  font-size: 20px;
+  text-align: center;
+}
+#infokiosk-address{
+  width: 1700px;
+  float: left;
+}
+.infokiosk-address-all{
+  width: 800px;
+  height: 70px;
+  background-color: white;
+  margin-top: 15px;
+  margin-right: 15px;
+  float: left;
+  border-radius: 7px;
+}
+.infokiosk-address{
+  width: 190px;
+  height: 70px;
+  position: relative;
+  float: left;
+  border-right: 2px solid black;
+  text-align: center;
+}
+.infokiosk-mode{
+  width: 208px;
+  height: 70px;
+  float: left;
+  border-right: 2px solid black;
+  position: relative;
+  text-align: center;
+}
+.infokiosk-address-all > div > p{
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+
+}
+.infokiosk-id{
+  width: 98px;
+  height: 70px;
+  position: relative;
+  float: left;
+  border-right: 2px solid black;
+  text-align: center;
+}
+.infokiosk-place{
+  width: 198px;
+  height: 70px;
+  position: relative;
+  border-right: 2px solid black;
+  float: left;
+  text-align: center;
+}
+.infokiosk-main{
+  width: 98px;
+  height: 70px;
+  position: relative;
+  float: left;
+  text-align: center;
+}

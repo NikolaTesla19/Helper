@@ -1,0 +1,123 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.spraynaz
+{
+height: 60px;
+width: 806px;
+background-color: white;
+float: left;
+}
+.sprayknop
+{
+height: 60px;
+width: 94px;
+background-color: white;
+float: left;
+margin-left: 3px;
+}
+.spraymenuysl
+{
+height: 100%;
+width: 200px;
+float: left;
+}
+.spraymenuysl1
+{
+height: 60px;
+width: 200px;
+background-color: white;
+float: left;
+margin-bottom: 2px;
+}
+.spraymenuysl2
+{
+height: 80px;
+width: 200px;
+background-color: white;
+float: left;
+margin-bottom: 2px;
+}
+
+
+
+
+
+#id_spraymenuobesp
+{
+height: 60px;
+width: 700px;
+background-color: white;
+float: left;
+margin-bottom: 3px;
+}
+.spraygraf
+{
+height: 50px;
+width: 700px;
+float: left;
+margin-left: 3px;
+
+}
+#tablesprayras
+{
+height: 100%;
+text-align: center;
+width: 100%;
+border-collapse: collapse;
+background-color: white;
+}
+.sprayyslzayavitel
+{
+width: 690px;
+background-color: white;
+float: left;
+margin-left: 3px;
+padding-left: 10px;
+display: none;
+}
+.spraydoczayavitel
+{
+width: 690px;
+background-color: white;
+float: left;
+margin-left: 3px;
+padding-left: 10px;
+display: none;
+}
+.sprayysldop
+{
+width: 690px;
+background-color: white;
+float: left;
+margin-left: 3px;
+padding-left: 10px;
+display: none;
+}
+.sprayyslblinger
+{
+width: 690px;
+background-color: white;
+float: left;
+margin-left: 3px;
+padding-left: 10px;
+display: none;
+}

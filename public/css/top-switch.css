@@ -1,0 +1,109 @@
+.pointer{
+  cursor: pointer;
+}
+#top-switch-icon-blinger{
+  margin-left: 120px;
+}
+.top-switch-slide{
+}
+.switch-info{
+  width: 150px;
+  height: 60px;
+  position: absolute;
+  background-color: white;
+  margin-top: 65px;
+  border-radius: 7px;
+  border: 1px solid #000;
+  display: none;
+}
+      #info-blinger-switch{
+        margin-left: 65px;
+      }
+      #info-credit-switch{
+        margin-left: 120px;
+      }
+            #info-credit-switch > p{
+              margin-top: 7px;
+            }
+      #info-deposit-switch{
+        margin-left: 175px;
+      }
+            #info-deposit-switch > p{
+              margin-top: 7px;
+            }
+      #info-links-switch{
+        margin-left: 230px;
+      }
+      #info-officesdevices-switch{
+        margin-left: 285px;
+      }
+            #info-officesdevices-switch > p{
+              margin-top: 7px;
+            }
+      #info-rates-switch{
+        margin-left: 340px;
+      }
+      #info-cashmanagement-switch{
+        margin-left: 395px;
+      }
+      #info-phonenumber-switch{
+        margin-left: 450px;
+      }
+            #info-phonenumber-switch > p{
+              margin-top: 7px;
+            }
+      #info-blingertxt-switch{
+        margin-left: 505px;
+      }
+            #info-blingertxt-switch > p{
+              margin-top: 7px;
+            }
+      #info-news-switch{
+        margin-left: 560px;
+      }
+.switch-top-container{
+  height: 60px;
+  margin-bottom: 20px;
+  background-color: #C4C4C4;
+  position: relative;
+}
+.switch-top{
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  margin-left: 15px;
+  margin-top: 10px;
+  float: left;
+  border-radius: 7px;
+  overflow: hidden;
+}
+      .switch-top > img {
+        width: 100%;
+        height: 100%;
+      }
+#belveb-icon{
+  height: 45px;
+  width: 75px;
+  margin-left: 20px;
+  top: 50%;
+  position: absolute;
+  transform: translate(0, -50%);
+
+}
+#belveb-icon > img{
+  height: 100%;
+  width: 100%;
+}
+#belveb-icon-switch{
+  height: 27px;
+  width: 27px;
+  margin-left: 20px;
+  top: 50%;
+  position: absolute;
+  transform: translate(0, -50%);
+  margin-left: 110px;
+}
+#belveb-icon-switch > img{
+  height: 100%;
+  width: 100%;
+}
